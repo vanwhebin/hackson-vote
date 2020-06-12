@@ -2,6 +2,10 @@
 use think\facade\Route;
 
 
+Route::get('model', 'index/index/model');
+
+
+
 Route::group('api', function () {
     Route::group('v1', function () {
         Route::group('product', function () {
