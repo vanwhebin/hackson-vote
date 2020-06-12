@@ -8,10 +8,8 @@ Route::get('model', 'index/index/model');
 
 Route::group('api', function () {
     Route::group('v1', function () {
-        Route::group('product', function () {
-            // 平台推送分站产品数据
-            Route::post('update', 'api/v1.Product/update');
-        });
+        // 平台推送分站产品数据
+        Route::post('program', 'api/v1.Program/post');
     });
 })->header('Access-Control-Allow-Origin', '*')
     // ->middleware(['permissionAuth'])

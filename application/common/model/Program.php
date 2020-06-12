@@ -8,6 +8,17 @@ use think\model\relation\HasManyThrough;
 
 class Program extends BaseModel
 {
+	/**
+	 * 关联活动
+	 * @return BelongsTo
+	 */
+	public function campaign()
+	{
+		return $this->belongsTo('Campaign', 'campaign_id','id');
+	}
+
+
+
     /**
      * 参赛项目的项目需求产品经理
      * @return BelongsTo

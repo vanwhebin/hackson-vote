@@ -8,6 +8,9 @@ class Index
 {
     public function model()
     {
+
+//    	echo 'hello';
+//    	exit;
         $wxToken = "g8MQ00bnZZgoGHIEGS1AsSsnG_1MMpeANuUuIdF7Bua8gSl8_VNBJORo70ufASgpCpPZ6FRqpijpm-aiRUo5WHCDL330mvuvNS06hXf0y9b5IDcOBJAKjzmds0iQfgo4nY1mLYiAwzxetMLnDw3E5NFxSA2NuIhot60hLMEvepzGhK4YVdIuVQHDW8SaKCYVWrSDZh97rQ9lDOZEWHgMOQ";
         $api = "https://qyapi.weixin.qq.com/cgi-bin/user/list?access_token=%s&department_id=%s";
         $depArr = [
