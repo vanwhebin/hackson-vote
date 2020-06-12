@@ -7,10 +7,10 @@ return [
     // 服务器地址
     'hostname'        => Env::get('database.mysql_hostname','127.0.0.1'),
     // 数据库名
-    'database'        => Env::get('database.mysql_database','review_online'),
+    'database'        => Env::get('database.mysql_database','hackson_vote'),
     // 用户名
-    'username'        => Env::get('database.mysql_username','chatdatauser'),
-    'password'        => Env::get('database.mysql_password','x6X11iMqLqKbZT'),
+    'username'        => Env::get('database.mysql_username','hackuser'),
+    'password'        => Env::get('database.mysql_password','%fUf0%M!Jg6^&7Ti@NKf#82Xm^sB!l82'),
     // 端口
     'hostport'        => Env::get('database.mysql_hostport','3306'),
     // 连接dsn
@@ -18,7 +18,7 @@ return [
     // 数据库连接参数
     'params'          => [],
     // 数据库编码默认采用utf8
-    'charset'         => 'utf8',
+    'charset'         => 'utf8mb4',
     // 数据库表前缀
     'prefix'          => 'hv_',
     // 数据库调试模式

@@ -3,7 +3,7 @@ return [
     'corpid'                =>  'ww0f3efc2873ad11c3',
     'agentid'               =>  '1000036',
     'corpsecret'            =>  'w5wdxJIB68-D09TtKxjHt3HJhiB40wytTdtoLSWN2SM',
-    'redirect_uri'          =>  'http://chat.freebie-queen.com',
+    'redirect_uri'          =>  'http://vote.freebie-queen.com',
     'callbackState'         =>  'reviewer@aukey',
     'access_token_expire'   =>  7200,
     'access_token_cache'    =>  "wx_access_token",
