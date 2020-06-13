@@ -3,9 +3,11 @@
 
 namespace app\api\controller\v1;
 
+use app\api\validate\RatingValidate;
 use app\common\model\Campaign;
 use app\common\model\Program as ProgramModel;
 use app\common\controller\BaseController;
+use app\common\model\ProgramRating;
 use think\db\exception\DataNotFoundException;
 use think\db\exception\ModelNotFoundException;
 use think\exception\DbException;
@@ -39,14 +41,11 @@ class Program extends BaseController
 
     }
 
-
     public function rating(Request $request)
     {
+        (new RatingValidate())->scene('user')->validate();
         $data = $request->param();
-        return resJson($data);
-        $program = ProgramModel::get($data['id']);
-        // $program->
-
+        ProgramRating::updateRating($data);
     }
 
 

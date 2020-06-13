@@ -84,7 +84,7 @@ class Token
     {
         $uid = self::getCurrentUID();
         $user = User::get($uid);
-        return $user->hidden(['paypal']);
+        return $user->hidden(['create_time', 'update_time', 'role_id']);
     }
 
     /**
@@ -107,6 +107,17 @@ class Token
     public static function getCurrentName()
     {
         return self::getCurrentTokenVar('name');
+    }
+
+    /**
+     * 当前用户缓存的所有信息
+     * @return mixed
+     * @throws Exception
+     * @throws TokenException
+     */
+    public static function getCurrentUserInfo()
+    {
+        return self::getCurrentTokenVar('all');
     }
 
     /**
@@ -145,6 +156,10 @@ class Token
         } catch (Exception $e) {  //其他错误
             throw new Exception($e->getMessage());
         }
+        if (strtolower($key) == 'all') {
+            return $jwt['user'];
+        }
+
         if (array_key_exists($key, $jwt['user'])) {
             return $jwt['user']->$key;
         } else {
