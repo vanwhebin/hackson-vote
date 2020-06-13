@@ -43,7 +43,7 @@ class Auth extends BaseController
         // 拿到code获取用户信息, 创建用户, 拿到企业微信的access_token 缓存起来
         // $user = $this->service->getWxUser($param);
         $wxUser = new WxUser();
-
+        return json([$param, $wxUser]);
         $wxUserID = $wxUser->getUserID($param['code']);
         $user = \app\common\model\User::getUserByUserID($wxUserID);
         // Hook::exec('app\api\behavior\UserLoginBehavior', $user);
