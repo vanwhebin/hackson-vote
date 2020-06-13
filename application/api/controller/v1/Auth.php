@@ -2,14 +2,12 @@
 
 namespace app\api\controller\v1;
 
-use app\api\validate\auth\LoginFormValidate;
-use app\api\validate\auth\WxCallbackValidate;
-use app\common\controller\BaseController;
 use app\api\service\User as UserService;
-use app\lib\enum\StatusEnum;
-use app\lib\exception\InvalidParamException;
+use app\common\controller\BaseController;
+use app\common\exception\InvalidParamException;
 use app\lib\token\Token;
 use app\lib\wx\WxUser;
+use think\Exception;
 use think\facade\Hook;
 use think\Request;
 use think\response\Json;
@@ -29,19 +27,17 @@ class Auth extends BaseController
     /**
      *  * 企业微信登录回调
      * @param Request $request
-     * @return Redirect
-     * @throws \app\common\exception\InvalidParamException
-     * @throws \think\Exception
+     * @return Json
+     * @throws InvalidParamException
+     * @throws Exception
      * @throws \think\db\exception\DataNotFoundException
      * @throws \think\db\exception\ModelNotFoundException
      * @throws \think\exception\DbException
      */
     public function wx(Request $request)
     {
-        // (new WxCallbackValidate())->scene('callback')->validate();
         $param = $request->param();
         // 拿到code获取用户信息, 创建用户, 拿到企业微信的access_token 缓存起来
-        // $user = $this->service->getWxUser($param);
         $wxUser = new WxUser();
         return json([$param, $wxUser]);
         $wxUserID = $wxUser->getUserID($param['code']);

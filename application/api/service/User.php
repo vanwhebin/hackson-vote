@@ -22,7 +22,6 @@ class User
      * 回调查询用户信息
      * @param $params
      * @return array|null|PDOStatement|string|Model|static
-     * @throws ForbiddenException
      * @throws \Exception
      * @throws InvalidParamException
      * @throws Exception
