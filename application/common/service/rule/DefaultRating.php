@@ -10,5 +10,4 @@ class DefaultRating implements RatingInterface
     {
 
     }
-
 }

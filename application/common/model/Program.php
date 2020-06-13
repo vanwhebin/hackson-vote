@@ -39,6 +39,27 @@ class Program extends BaseModel
     }
 
 
+    public static function getAllPrograms($campaignID)
+    {
+        return self::with(['campaign' => function($query) {
+            $query->field(['title', 'id'])->visible(['title']);
+        } ,'product' => function($query){
+            $query->field(['name', 'id'])-> visible(['name']);
+        }])
+            ->where(['campaign_id' => $campaignID])
+            ->select();
+    }
+
+    public static function getRating($campaignID, $userID)
+    {
+        return ProgramRating::where(['campaign_id' => $campaignID, 'rating_user_id' => $userID])
+            ->select();
+    }
+
+
+
+
+
 
 
 }

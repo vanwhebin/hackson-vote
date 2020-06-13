@@ -4,6 +4,7 @@ namespace app\lib\token;
 
 use app\common\exception\TokenException;
 use app\common\model\Reviewer;
+use app\common\model\User;
 use Firebase\JWT\JWT;
 use Firebase\JWT\SignatureInvalidException;
 use Firebase\JWT\BeforeValidException;
@@ -25,7 +26,7 @@ class Token
         $refreshToken = self::createRefreshToken($user);
         return [
             'access_token' => $accessToken,
-            'refresh_token' => $refreshToken
+            // 'refresh_token' => $refreshToken
         ];
     }
 
@@ -82,7 +83,7 @@ class Token
     public static function getCurrentUser()
     {
         $uid = self::getCurrentUID();
-        $user = Reviewer::get($uid);
+        $user = User::get($uid);
         return $user->hidden(['paypal']);
     }
 

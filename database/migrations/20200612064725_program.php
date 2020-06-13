@@ -31,6 +31,7 @@ class Program extends Migrator
         $table = $this->table('program',array('engine'=>'InnoDB','charset' => 'utf8mb4'));
         $table->addColumn('title', 'string', ['limit' => 255, 'default' => '', 'comment' => '项目名称'])
             ->addColumn('desc', 'string', ['limit' => 255, 'default' => '', 'comment' => '项目名称'])
+            ->addColumn('uuid', 'string', ['limit' => 255, 'default' => '', 'comment' => '唯一标识'])
             ->addColumn('selected', 'integer', ['limit' => 1, 'signed' => false, 'default' => 0, 'comment' => '是否已认领'])
             ->addColumn('memo', 'string', ['limit' => 300, 'default' => '', 'comment' => '备注（需求链接之类的）'])
             ->addColumn('campaign_id', 'integer', ['limit' => 3, 'signed' => 'false', 'comment' => '活动ID，对应表外键'])

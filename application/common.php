@@ -1,5 +1,38 @@
 <?php
 
+use think\response\Json;
+use think\facade\Log;
+
+function logger($type, $log, $topic) {
+    if (is_array($log)) {
+        $log = json_encode($log);
+    }
+    Log::write($log);
+    \app\common\model\Log::create([
+        'type' => $type,
+        'log'  => $log,
+        'topic' => $topic,
+    ]);
+    return true;
+}
+
+/**
+ * 接口返回格式化
+ * @param $data
+ * @param string $msg
+ * @param int $errorCode
+ * @return Json
+ */
+function resJson($data, $msg = 'ok', $errorCode = 0)
+{
+    $data = [
+        'code' => $errorCode,
+        'data' => $data,
+        'msg' => $msg
+    ];
+    return json($data, 200);
+}
+
 // 应用公共文件
 /**
  * 封装请求方法1

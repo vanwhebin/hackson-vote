@@ -8,8 +8,7 @@
 
 namespace app\lib\wx;
 
-use app\lib\enum\LogEnum;
-use app\lib\exception\InvalidParamException;
+use app\common\exception\InvalidParamException;
 use think\Exception;
 use think\facade\Log;
 
@@ -34,7 +33,7 @@ class WxUser extends Wx
 			$userID = $curlRes['UserId'];
 			return $userID;
 		} else {
-			logger(LogEnum::WX_POST,'调用企业微信获取userID失败 '.$curlRes['errmsg']."###". json_encode($curlRes), '获取企业微信信息');
+			// logger(LogEnum::WX_POST,'调用企业微信获取userID失败 '.$curlRes['errmsg']."###". json_encode($curlRes), '获取企业微信信息');
             Log::write($curlRes['errmsg']."###". json_encode($curlRes));
 			throw new InvalidParamException(['msg'=>'调用企业微信获取userID失败']);
 		}
