@@ -20,9 +20,8 @@ class Campaign extends BaseController
     /**
      * @param Request $request
      * @return \think\response\Json
-     * @throws \think\db\exception\DataNotFoundException
-     * @throws \think\db\exception\ModelNotFoundException
-     * @throws \think\exception\DbException
+     * @throws \app\common\exception\TokenException
+     * @throws \think\Exception
      */
     public function index(Request $request)
     {
