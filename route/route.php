@@ -12,7 +12,7 @@ Route::group('api', function () {
         Route::post('program', 'api/v1.Program/post');
         Route::get('campaign/:id', 'api/v1.Campaign/index');
         Route::get('program/:id', 'api/v1.Program/all');
-        Route::rule('user/login', 'api/v1.Auth/login', 'GET|POST');
+        Route::rule('login', 'api/v1.Auth/wx', 'GET|POST');
         Route::get('user', 'api/v1.User/all');
     });
 })->header('Access-Control-Allow-Origin', '*')

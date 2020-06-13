@@ -25,22 +25,6 @@ class Auth extends BaseController
         $this->service = new UserService();
     }
 
-    /**
-     * 用户登录
-     * @param Request $request
-     * @return Json|Redirect
-     * @throws InvalidParamException
-     */
-    public function login(Request $request)
-    {
-        // $type = strtolower($request->param('type'));
-        // if ($type === 'wx') {
-        //     return $this->wx($request);
-        // } else if ($type === 'email') {
-        //     return $this->email($request);
-        // }
-    }
-
 
     /**
      *  * 企业微信登录回调
