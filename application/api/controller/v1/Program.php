@@ -43,7 +43,9 @@ class Program extends BaseController
     public function rating(Request $request)
     {
         $data = $request->param();
-        $program = ProgramModel::get($data['programID']);
+        return resJson($data);
+        $program = ProgramModel::get($data['id']);
+        // $program->
 
     }
 

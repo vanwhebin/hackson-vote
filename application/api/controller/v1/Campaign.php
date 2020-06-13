@@ -26,13 +26,12 @@ class Campaign extends BaseController
     public function index(Request $request)
     {
         // 获取所有的项目
-        $userID = Token::getCurrentUID();
+        // $userID = Token::getCurrentUID();
+        $userID = 57;
         $campaignID = $request->get('campaignID', 1);
-        $campaign = \app\common\model\Campaign::getOrFail($campaignID);
-        $programs = ProgramModel::getAllPrograms($campaignID)->toArray();
-        $rating = ProgramModel::getRating($campaignID, $userID)->toArray();
-        // var_dump($programs);
-        // exit;
+        \app\common\model\Campaign::getOrFail($campaignID);
+        $programs = ProgramModel::getRatingProgram($campaignID, $userID);
+
         return resJson($programs);
     }
 }

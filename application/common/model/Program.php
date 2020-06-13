@@ -57,6 +57,19 @@ class Program extends BaseModel
     }
 
 
+    public static function getRatingProgram($campaignID, $userID)
+    {
+        $programs = self::getAllPrograms($campaignID)->toArray();
+        $programsRatings = self::getRating($campaignID, $userID)->toArray();
+        return array_map(function(&$item) use ($programsRatings) {
+            foreach($programsRatings as $rating) {
+                $item['self_rating'] = $rating['program_id'] == $item['id'] ? $rating['rating'] : 0;
+                return $item;
+            }
+        }, $programs);
+    }
+
+
 
 
 
