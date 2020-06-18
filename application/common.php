@@ -3,6 +3,23 @@
 use think\response\Json;
 use think\facade\Log;
 
+function createUID($str, $salt){
+    return md5($salt. $str);
+}
+
+
+function  uuid()
+{
+    $chars = md5(uniqid(mt_rand(), true));
+    $uuid = substr ( $chars, 0, 8 ) . '-'
+        . substr ( $chars, 8, 4 ) . '-'
+        . substr ( $chars, 12, 4 ) . '-'
+        . substr ( $chars, 16, 4 ) . '-'
+        . substr ( $chars, 20, 12 );
+    return strtoupper($uuid) ;
+}
+
+
 function logger($type, $log, $topic) {
     if (is_array($log)) {
         $log = json_encode($log);
@@ -23,7 +40,7 @@ function logger($type, $log, $topic) {
  * @param int $errorCode
  * @return Json
  */
-function resJson($data, $msg = 'ok', $errorCode = 0)
+function resJson($data=[], $msg = 'ok', $errorCode = 0)
 {
     $data = [
         'code' => $errorCode,

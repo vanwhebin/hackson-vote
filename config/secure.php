@@ -14,15 +14,7 @@ return [
     'auth_salt' => 'c0G41BQ$YLwH',
     'token_salt' => 'c041241B412Q$YLwH',
     'white' => [
-        '/api/v1/user/info',
-        '/api/v1/user/logout',
-        '/api/v1/user/login/wx',
-        '/api/v1/user/login/email',
-        /*--------------*/
-        // 接收messenger回调信息
-        '/messenger',
-        // 接收亚马逊验证消息的回调
-        '/profile-validation',
-        '/api/v1/site/reviewer',
     ],
+    'program_salt' => 'hackthon',
+    'campaign_salt' => 'hackthon_campaign',
 ];

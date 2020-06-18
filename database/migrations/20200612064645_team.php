@@ -30,10 +30,12 @@ class Team extends Migrator
     {
         // 组长  演示  名称  排序 评分人员
         $table = $this->table('team',array('engine'=>'InnoDB','charset' => 'utf8mb4'));
-        $table->addColumn('captain_id', 'integer', ['signed' => false, 'limit'=> 5, 'null' => false, 'comment' => '队长ID'])
-            ->addColumn('show_user_id', 'integer', ['signed' => false, 'limit'=> 5, 'null' => false, 'comment' => '展示人员ID'])
-            ->addColumn('rating_user_id', 'integer', ['signed' => false, 'limit'=> 5, 'null' => false, 'comment' => '评分人员ID'])
-            ->addColumn('title','string',['limit'=> 255, 'default' => '', 'comment' => '队名，由日期和项目名称组成'] )
+        $table->addColumn('captain', 'integer', ['signed' => false, 'limit'=> 5,'comment' => '队长ID'])
+            ->addColumn('rating', 'integer', ['signed' => false, 'limit'=> 5, 'null' => false, 'comment' => '评分人员ID'])
+            ->addColumn('product', 'integer', ['signed' => false, 'limit'=> 5, 'null' => false, 'comment' => '产品人员ID'])
+            ->addColumn('test', 'integer', ['signed' => false, 'limit'=> 5, 'null' => false, 'comment' => '测试人员ID'])
+            ->addColumn('develop', 'string', ['limit'=> 255, 'null' => false, 'comment' => '开发人员ID字符串'])
+            ->addColumn('title','string',['limit'=> 255, 'default' => '', 'comment' => '队名'] )
             ->addColumn('order', 'integer', ['signed' => false, 'limit' => 3, 'default' => 0, 'comment' => '排序'])
             ->addColumn('create_time', 'integer', ['limit' => 11, 'signed' => false,'null'=> true,  'comment' => '创建时间'])
             ->addColumn('update_time', 'integer', ['limit' => 11, 'signed' => false, 'null'=> true, 'comment' => '更新时间'])

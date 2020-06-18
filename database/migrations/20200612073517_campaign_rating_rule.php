@@ -31,7 +31,7 @@ class CampaignRatingRule extends Migrator
         $table = $this->table('campaign_rating_rule',array('engine'=>'MyISAM','charset' => 'utf8mb4'));
         $table->addColumn('title', 'string', ['limit' => 255, 'null' => false, 'comment' => '规则标题'])
             ->addColumn('desc', 'string', ['limit' => 255, 'null' => false, 'default'=> '', 'comment' => '具体规则的描述'])
-            ->addColumn('rule', 'string', ['limit' => 255, 'null' => false, 'comment' => '执行规则的类名'])
+            ->addColumn('content', 'string', ['limit' => 500, 'null' => false, 'comment' => '执行的规则'])
             ->addColumn('create_time', 'integer', ['limit' => 11, 'signed' => false,'null'=> true,  'comment' => '创建时间'])
             ->addColumn('update_time', 'integer', ['limit' => 11, 'signed' => false, 'null'=> true, 'comment' => '更新时间'])
             ->addColumn('delete_time', 'integer', ['limit' => 11, 'signed' => false,'null'=> true,  'comment' => '删除时间'])

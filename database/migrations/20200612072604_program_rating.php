@@ -33,7 +33,7 @@ class ProgramRating extends Migrator
             ->addColumn('campaign_id', 'integer', ['limit' => 3, 'signed' =>false, 'null' => false, 'comment' => 'campaign表ID'])
             ->addColumn('rating_user_id', 'integer', ['limit' => 3, 'signed' =>false, 'null' => false, 'comment' => 'user表ID'])
             ->addColumn('rating_str', 'string', ['limit' => 255, 'null' => false, 'comment' => '各维度下的评分结果字符串'])
-            ->addColumn('rating', 'integer', ['limit' => 2, 'null' => false, 'signed' => false, 'comment' => '评分结果'])
+            ->addColumn('score', 'integer', ['limit' => 2, 'null' => false, 'signed' => false, 'comment' => '评分结果'])
             ->addColumn('create_time', 'integer', ['limit' => 11, 'signed' => false,'null'=> true,  'comment' => '创建时间'])
             ->addColumn('update_time', 'integer', ['limit' => 11, 'signed' => false, 'null'=> true, 'comment' => '更新时间'])
             ->addColumn('delete_time', 'integer', ['limit' => 11, 'signed' => false,'null'=> true,  'comment' => '删除时间'])

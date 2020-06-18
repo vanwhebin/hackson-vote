@@ -11,9 +11,7 @@ use think\db\exception\DataNotFoundException;
 use think\db\exception\ModelNotFoundException;
 use think\Exception;
 use think\exception\DbException;
-use think\facade\Hook;
 use think\Request;
-use think\response\Json;
 use think\response\Redirect;
 
 class Auth extends BaseController
@@ -53,20 +51,4 @@ class Auth extends BaseController
         return redirect($url);
     }
 
-    /**
-     * 用户使用邮件登录
-     * @param Request $request
-     * @return Json
-     * @throws InvalidParamException
-     */
-    public function email(Request $request)
-    {
-        (new LoginFormValidate())->validate();
-        $data = $request->post();
-        $user = $this->service->getEmailUser($data['email'], $data['password']);
-
-        $token = Token::getToken($user);
-        Hook::exec('app\api\behavior\UserLoginBehavior', $user);
-        return resJson(200, $token);
-    }
 }

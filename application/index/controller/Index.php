@@ -49,4 +49,21 @@ class Index
             return json(['msg' => $e->getMessage(), 'line' => $e->getLine()]);
         }
     }
+
+    public function uuid()
+    {
+        $userInfo = User::find(57)->toArray();
+        var_dump($userInfo);
+        exit;
+        // return uuid();
+        $t = [];
+        for ($i = 0; $i< 12; $i++) {
+            $t[] = md5(config('secure.campaign_salt'). $i);
+        }
+        return $t;
+        // return md5('hackthon'. 1);
+    }
+
+
+
 }

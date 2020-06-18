@@ -3,20 +3,25 @@ use think\facade\Route;
 
 
 Route::get('model', 'index/index/model');
+Route::get('uuid', 'index/index/uuid');
 
 
 
 Route::group('api', function () {
     Route::group('v1', function () {
         // 平台推送分站产品数据
-        Route::post('program', 'api/v1.Program/post');
-        Route::get('campaign/:id', 'api/v1.Campaign/index');
-        Route::put('program/:id', 'api/v1.Program/rating');
-        Route::get('program/:id', 'api/v1.Program/all');
+        Route::post('program', 'api/v1.Program/create');
+        Route::get('campaign/latest', 'api/v1.Campaign/latest');
+        Route::get('campaign/list', 'api/v1.Campaign/collections');
+        Route::put('campaign/:campaignUID/vote', 'api/v1.Campaign/batchSubmit');
+        Route::get('campaign/:campaignUID/rater', 'api/v1.Campaign/rater');
+        Route::get('campaign/:campaignUID', 'api/v1.Campaign/index');
+        Route::get('campaign/:campaignUID/result', 'api/v1.Campaign/top');
+        Route::put('program/:programUID', 'api/v1.Program/rating');
         Route::rule('login', 'api/v1.Auth/wx', 'GET|POST');
         Route::get('user', 'api/v1.User/all');
     });
 })->header('Access-Control-Allow-Origin', '*')
-    // ->middleware(['permissionAuth'])
+    ->middleware(['loginStatus'])
     // ->domain(Env::get('api.domain','chat.freebie-queen.com'))
     ->allowCrossDomain();
