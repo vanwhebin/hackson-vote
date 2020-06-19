@@ -3,8 +3,8 @@
 
 namespace app\api\controller\v1;
 
-
 use app\api\validate\CampaignValidate;
+use app\api\validate\CreateCampaignValidate;
 use app\common\controller\BaseController;
 use app\common\exception\InvalidParamException;
 use app\common\facade\ProgramFacade as ProgramModel;
@@ -17,9 +17,14 @@ use think\response\Json;
 
 class Campaign extends BaseController
 {
+    /**
+     * 获取活动列表信息
+     * @param Request $request
+     * @return Json
+     * @throws InvalidParamException
+     */
     public function collections(Request $request)
     {
-        // 获取活动列表信息
         (new PaginationValidate())->validate();
         $data = $request->param();
         $campaigns = CampaignModel::getList($data['pageSize'], $data['pageNum'])->toArray();
@@ -38,11 +43,9 @@ class Campaign extends BaseController
         // 获取所有的项目
         (new CampaignValidate())->validate();
         $user = $request->user;
-        $userID = 57;
         $campaignUID = $request->param('campaignUID', 0);
-        // return $campaignID;
         $campaign = CampaignModel::findByUid($campaignUID);
-        $programs = ProgramModel::getRatingProgram($campaign->id, $userID);
+        $programs = ProgramModel::getRatingProgram($campaign->id, $user['id']);
 
         return resJson($programs);
     }
@@ -64,7 +67,7 @@ class Campaign extends BaseController
         ProgramRatingModel::disableStatus($campaign,$user);
         $allDone = ProgramRatingModel::checkRecord($campaign->id);
         if (!$allDone) {
-            Hook::exec('app\\api\\behavior\\GetCampaignRatingBehavior', $data['campaignUID']);
+            Hook::exec('app\\api\\behavior\\GetCampaignRatingBehavior', $campaign->toArray());
         }
         return resJson();
     }
@@ -113,6 +116,69 @@ class Campaign extends BaseController
             return resJson($campaign);
         } else {
             $code = config('error_code.campaign')['EMPTY'];
+            $msg = config('error_msg');
+            return resJson($request->param(), $msg[$code], $code);
+        }
+    }
+
+    /**
+     * 更新评分规则
+     * @param Request $request
+     * @return Json
+     * @throws InvalidParamException
+     */
+    public function rule(Request $request)
+    {
+        (new CampaignValidate())->validate();
+        $data = $request->param();
+        $campaign = CampaignModel::findByUid($data['campaignUID']);
+        $campaign->rule->content = json_encode($data['rule']);
+        if ($campaign->rule->save()) {
+            return resJson();
+        } else {
+            $code = config('error_code.campaign')['UPDATE_RULE_FAIL'];
+            $msg = config('error_msg');
+            return resJson($request->param(), $msg[$code], $code);
+        }
+    }
+
+    /**
+     * 创建活动
+     * @param Request $request
+     * @return Json
+     * @throws InvalidParamException
+     */
+    public function create(Request $request)
+    {
+
+        (new CreateCampaignValidate())->validate();
+        if ($campaign = CampaignModel::createOne($request->param())) {
+            Hook::exec('app\\api\\behavior\\CreateUUIDBehavior', $campaign);
+            return resJson($campaign);
+        } else {
+            logger('创建活动失败', json_encode($request->param()), __CLASS__.'#'.__METHOD__);
+            $code = config('error_code.campaign')['CREATE_FAIL'];
+            $msg = config('error_msg');
+            return resJson($request->param(), $msg[$code], $code);
+        }
+    }
+
+    /**
+     * 更新活动信息
+     * @param Request $request
+     * @return Json
+     * @throws InvalidParamException
+     */
+    public function update(Request $request)
+    {
+        (new CampaignValidate())->validate();
+        $data = $request->param();
+        $campaign = CampaignModel::findByUid($data['campaignUID']);
+        if ($campaign->updateInfo($data)) {
+            return resJson($campaign);
+        } else {
+            logger('更新活动失败', json_encode($request->param()), __CLASS__.'#'.__METHOD__);
+            $code = config('error_code.campaign')['UPDATE_FAIL'];
             $msg = config('error_msg');
             return resJson($request->param(), $msg[$code], $code);
         }

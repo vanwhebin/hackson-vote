@@ -8,7 +8,9 @@ namespace app\common\model;
 use PDOStatement;
 use think\db\exception\DataNotFoundException;
 use think\db\exception\ModelNotFoundException;
+use think\Exception;
 use think\exception\DbException;
+use think\exception\PDOException;
 use think\Model;
 use think\model\relation\BelongsTo;
 
@@ -77,13 +79,40 @@ class ProgramRating extends BaseModel
      * @param $campaign
      * @param $user
      * @return int|string
-     * @throws \think\Exception
-     * @throws \think\exception\PDOException
+     * @throws Exception
+     * @throws PDOException
      */
     public function disableStatus($campaign, $user)
     {
         return $this->where(['campaign_id' => $campaign->id, 'rating_user_id' => $user['id']])
             ->update(['status' => self::DISABLED]);
+    }
+
+    /**
+     * @param $campaignID
+     * @return array
+     * @throws DataNotFoundException
+     * @throws DbException
+     * @throws ModelNotFoundException
+     */
+    public function getRating($campaignID)
+    {
+        // 获取对应的活动下已经全部打分的评分结果
+        // 返回 [{user: {id: 11, name: 'zhang san'}, rating: 10 }]
+        // 当前活动下已经全部打好分的
+        $ratings = self::with(['user' => function($query){
+            $query->field(['id', 'name']);
+        }, 'program' => function($query) {
+            $query->where(['status' => Program::ACTIVE])
+                ->field(['id', 'title']);
+        }])->where(['campaign_id' => $campaignID, 'status' => self::DISABLED])
+            ->field(['rating_user_id', 'score', 'program_id'])
+            ->visible(['score'])
+            ->select()
+            ->toArray();
+
+        return $ratings;
+
     }
 
 

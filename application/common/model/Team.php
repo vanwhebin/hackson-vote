@@ -49,8 +49,8 @@ class Team extends BaseModel
             'rating' => intval($data['rating']),
             'product' => intval($data['product']),
             'test' => intval($data['test']),
-            'design' => intval($data['design']),
-            'develop' => intval($data['develop']),
+            'design' => !empty($data['design']) ? intval($data['design']) : null,
+            'develop' => $data['develop'],
         ]);
     }
 

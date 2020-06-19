@@ -15,6 +15,6 @@ return [
     'token_salt' => 'c041241B412Q$YLwH',
     'white' => [
     ],
-    'program_salt' => 'hackthon',
+    'program_salt' => 'hackthon_program',
     'campaign_salt' => 'hackthon_campaign',
 ];

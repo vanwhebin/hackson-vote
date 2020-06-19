@@ -1,6 +1,9 @@
 <?php
 namespace app\index\controller;
 
+use app\common\facade\ProgramRatingFacade;
+use app\common\model\Campaign;
+use app\common\model\Program;
 use app\common\model\User;
 use think\Exception;
 
@@ -62,6 +65,36 @@ class Index
         }
         return $t;
         // return md5('hackthon'. 1);
+    }
+
+    public function score()
+    {
+        $campaign = Campaign::get(1)->toArray();
+        $rule = json_decode($campaign['rule'], true);
+        $ratings = ProgramRatingFacade::getRating(1);
+        $programModel = new Program();
+        // return $rule;
+        $formatedPrograms = [];
+        $updateRating = [];
+        array_map(function($item) use (&$formatedPrograms) {
+            if (!empty($item['program'])) {
+                $formatedPrograms[$item['program']['id']][$item['user']['name']] = $item['score'];
+            }
+            return $item;
+        }, $ratings);
+        // return json($formatedPrograms);
+        foreach($formatedPrograms as $key=>$program) {
+            $rating = 0;
+            foreach($rule as $username=>$weight) {
+                if (isset($program[$username]) && !empty($program[$username])) {
+                    $personalRating = $program[$username] * $weight;
+                    $rating = $rating + $personalRating;
+                }
+            }
+            $updateRating[] = ['id' => $key, 'rating' => $rating];
+        }
+        // return json($updateRating);
+        return $programModel->saveAll($updateRating);
     }
 
 

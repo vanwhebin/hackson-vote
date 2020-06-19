@@ -14,5 +14,7 @@ return [
        'VALIDATE_FAIL' => 20000,
        'EMPTY' => 20001,
        'CREATE_FAIL' => 20002,
+       'UPDATE_RULE_FAIL' => 20003,
+       'UPDATE_FAIL' => 20004,
    ]
 ];

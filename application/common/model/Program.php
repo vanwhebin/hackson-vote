@@ -210,6 +210,7 @@ class Program extends BaseModel
                 'memo' => !empty($data['memo'])? trim($data['memo']) : '',
             ]);
             $team = Team::createOne($data);
+            // Hook::exec('app\\api\\behavior\\CreateUUIDBehavior', $program);
             $program->uuid = createUID($campaign->id, config('secure.program_salt'));
             $program->team_id = $team->id;
             $program->save();
