@@ -9,11 +9,11 @@ use app\common\validate\BaseValidate;
 class ProgramValidate extends BaseValidate
 {
     public $rule = [
-        'ProgramUID' => 'require|length:32'
+        'programUID' => 'require|length:32'
     ];
 
     public $message = [
-        'ProgramUID' => '非法项目ID'
+        'programUID' => '非法项目ID'
     ];
 
     public function sceneScore()

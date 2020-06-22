@@ -3,10 +3,19 @@
 use think\response\Json;
 use think\facade\Log;
 
+
+
+function errCodeMsg($type, $str) {
+    $errorCodes = config('error_code');
+    $messages = config('error_msg');
+    $errCode = !empty($errorCodes[$type]) ? $errorCodes[$type] : 110;
+    $errMsg = !empty($messages[$str]) ? $messages[$str] : $str;
+    return ['code' => $errCode, 'msg' => $errMsg];
+}
+
 function createUID($str, $salt){
     return md5($salt. $str);
 }
-
 
 function  uuid()
 {

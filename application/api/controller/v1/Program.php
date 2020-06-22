@@ -24,9 +24,8 @@ class Program extends BaseController
     	if (ProgramModel::createOne($campaign, $data, $request->user)){
     	    return resJson();
         } else {
-    	    $errCode = config('error_code.program')['CREATE_FAIL'];
-    	    $errMsg = config('error_msg');
-            return resJson($data, $errMsg[$errCode], $errCode);
+            $err = errCodeMsg('program', 'CREATE_FAIL');
+            return resJson($data, $err['msg'], $err['code']);
         }
     }
 
@@ -48,7 +47,8 @@ class Program extends BaseController
         if ($res) {
             return resJson();
         } else {
-            return resJson($data, '');
+            $err = errCodeMsg('program', 'UPDATE_FAIL');
+            return resJson($data, $err['msg'], $err['code']);
         }
     }
 

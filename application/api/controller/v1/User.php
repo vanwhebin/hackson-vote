@@ -3,12 +3,14 @@
 
 namespace app\api\controller\v1;
 
+use app\api\validate\LoginFormValidate;
 use app\common\model\User as UserModel;
 use app\common\controller\BaseController;
 use app\lib\token\Token;
 use think\db\exception\DataNotFoundException;
 use think\db\exception\ModelNotFoundException;
 use think\exception\DbException;
+use think\Request;
 use think\response\Json;
 
 class User extends BaseController

@@ -3,6 +3,7 @@
 namespace app\api\controller\v1;
 
 use app\api\service\User as UserService;
+use app\api\validate\LoginFormValidate;
 use app\common\controller\BaseController;
 use app\common\exception\InvalidParamException;
 use app\lib\token\Token;
@@ -11,7 +12,9 @@ use think\db\exception\DataNotFoundException;
 use think\db\exception\ModelNotFoundException;
 use think\Exception;
 use think\exception\DbException;
+use think\facade\Hook;
 use think\Request;
+use think\response\Json;
 use think\response\Redirect;
 
 class Auth extends BaseController
@@ -49,6 +52,25 @@ class Auth extends BaseController
 	    // 创建测评系统access_token，缓存用户的信息, 返回系统的access_token
         $url = $url . '?' . http_build_query($token);
         return redirect($url);
+    }
+
+    /**
+     *  * 用户使用邮件登录
+     * @param Request $request
+     * @return Json
+     * @throws DataNotFoundException
+     * @throws DbException
+     * @throws InvalidParamException
+     * @throws ModelNotFoundException
+     */
+    public function email(Request $request)
+    {
+        (new LoginFormValidate())->validate();
+        $data = $request->post();
+        $user = \app\common\model\User::getEmailUser($data['email'], $data['password']);
+
+        $token = Token::getToken($user);
+        return resJson(200, $token);
     }
 
 }

@@ -22,4 +22,17 @@ class User extends BaseModel
         // workerID就是企业微信分配给企业当中每个人唯一的id号，区别于user表的自增ID，使用workerID
         return self::where(['userid' => $workerID])->find();
     }
+
+    /**
+     * @param $email
+     * @param $password
+     * @return array|PDOStatement|string|Model
+     * @throws DataNotFoundException
+     * @throws DbException
+     * @throws ModelNotFoundException
+     */
+    public static function getEmailUser($email, $password)
+    {
+        return self::where(['email' => $email, 'password' => $password])->findOrEmpty();
+    }
 }

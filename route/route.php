@@ -4,7 +4,7 @@ use think\facade\Route;
 
 Route::get('model', 'index/index/model');
 Route::get('uuid', 'index/index/uuid');
-Route::get('score', 'index/index/score');
+Route::post('login', 'api/auth/email');
 
 
 

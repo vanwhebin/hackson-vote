@@ -24,8 +24,10 @@ class Login
         try {
             // $userInfo = Token::getCurrentUserInfo();
             // $userInfo = Token::getCurrentUserInfo();
+            // if ($userInfo = Token::getCurrentUserInfo()) {
+            //     $request->user = $userInfo;
+            // }
             $userInfo = User::find(57)->toArray();
-
             $request->user = $userInfo;
             return $next($request);
         } catch (TokenException $exception) {
