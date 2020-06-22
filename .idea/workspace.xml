@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="382370cc-1e86-4108-88fa-4dc0d51aac77" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/.htaccess" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/api/behavior/AddRatingBehavior.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/api/behavior/CreateUUIDBehavior.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/api/behavior/GetCampaignRatingBehavior.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/api/behavior/GetProgramRatingBehavior.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/api/behavior/LoadFacadeBehavior.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/api/controller/v1/Auth.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/api/controller/v1/Campaign.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/api/controller/v1/Program.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/api/controller/v1/User.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/api/service/User.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/api/validate/CampaignValidate.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/api/validate/CreateCampaignValidate.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/api/validate/CreateProgramValidate.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/api/validate/LoginFormValidate.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/api/validate/ProgramValidate.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/command.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/common.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/common/controller/BaseController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/common/exception/BaseException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/common/exception/ExceptionHandler.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/common/exception/FileException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/common/exception/ForbiddenException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/common/exception/InvalidParamException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/common/exception/TokenException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/common/facade/CampaignFacade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/common/facade/ProgramFacade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/common/facade/ProgramRatingFacade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/common/model/BaseModel.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/common/model/Campaign.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/common/model/CampaignRatingRule.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/common/model/CampaignRatingTag.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/common/model/Log.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/common/model/Media.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/common/model/Program.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/common/model/ProgramRating.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/common/model/ProgramResult.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/common/model/RatingTag.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/common/model/Role.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/common/model/Team.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/common/model/TeamMember.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/common/model/User.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/common/service/rule/DefaultRating.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/common/service/rule/RatingInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/common/validate/BaseValidate.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/common/validate/PaginationValidate.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/http/middleware/Login.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/index/controller/Index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/lib/encrypt/PasswordHash.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/lib/file/File.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/lib/file/LocalUploader.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/lib/token/Token.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/lib/wx/Wx.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/lib/wx/WxMedia.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/lib/wx/WxMsg.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/lib/wx/WxUser.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/provider.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/tags.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/cache.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/console.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/cookie.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/error_code.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/error_msg.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/facade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/log.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/middleware.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/secure.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/session.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/template.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/trace.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/wx.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/20200307040402_log.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/20200528095639_media.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/20200612042540_role.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/20200612042559_user.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/20200612064628_campaign.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/20200612064645_team.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/20200612064725_program.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/20200612064842_team_member.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/20200612072604_program_rating.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/20200612073517_campaign_rating_rule.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/20200612074454_rating_tag.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/20200612080111_campaign_rating_tag.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/RatingTag.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/Role.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/Users.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/extend/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/.htaccess" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/router.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/route/route.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/think" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution>
+      <executable path="composer" />
+    </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpServers">
+    <servers>
+      <server host="http://hack.local" id="f463214e-abb5-4cea-a21c-f97a01f2729b" name="hack" />
+    </servers>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/topthink/think-installer" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/topthink/think-migration" />
+      <path value="$PROJECT_DIR$/vendor/firebase/php-jwt" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1dCcQYl9odtRG9RjYUoyj5UKBdY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/config" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\phpstudy\WWW\programs\hackson_vote\application\api" />
+      <recent name="D:\phpstudy\WWW\programs\hackson_vote\application\api\v1" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\phpstudy\WWW\programs\hackson_vote\config" />
+      <recent name="D:\phpstudy\WWW\programs\hackson_vote\application\api\service" />
+      <recent name="D:\phpstudy\WWW\programs\hackson_vote\application\api\controller\v1" />
+      <recent name="D:\phpstudy\WWW\programs\hackson_vote\database\migrations" />
+      <recent name="D:\phpstudy\WWW\programs\hackson_vote" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Hack" type="PhpRemoteDebugRunConfigurationType" factoryName="PHP Remote Debug" filter_connections="FILTER" server_name="hack" session_id="HACK">
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PhpRemoteDebugRunConfigurationType" factoryName="PHP Remote Debug" filter_connections="FILTER" server_name="hack" session_id="HACK">
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="540" y="180" key="#Servers" timestamp="1592300269842">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="540" y="180" key="#Servers/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1592300269842" />
+    <state x="414" y="180" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592300301607">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="414" y="180" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1592300301607" />
+    <state x="704" y="360" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1592187063565">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="704" y="360" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1592187063565" />
+    <state x="646" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1591943773795">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="646" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1591943773795" />
+    <state x="-1230" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1592796840934">
+      <screen x="-1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="-1230" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1592796840934" />
+    <state x="690" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1592193641142" />
+    <state x="719" y="438" key="ComposerInitDialogKey" timestamp="1591933728443">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="719" y="438" key="ComposerInitDialogKey/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1591933728443" />
+    <state width="421" height="466" key="DebuggerActiveHint" timestamp="1592555876711">
+      <screen x="-1920" y="0" width="1920" height="1050" />
+    </state>
+    <state width="421" height="466" key="DebuggerActiveHint/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1592555876711" />
+    <state x="-1185" y="266" key="FileChooserDialogImpl" timestamp="1592463945502">
+      <screen x="-1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="-1185" y="266" key="FileChooserDialogImpl/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1592463945502" />
+    <state width="1877" height="169" key="GridCell.Tab.0.bottom" timestamp="1592794621171">
+      <screen x="-1920" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="169" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1592794621171" />
+    <state width="1877" height="169" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1592788564879" />
+    <state width="1877" height="169" key="GridCell.Tab.0.center" timestamp="1592794621171">
+      <screen x="-1920" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="169" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1592794621171" />
+    <state width="1877" height="169" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1592788564878" />
+    <state width="1877" height="169" key="GridCell.Tab.0.left" timestamp="1592794621171">
+      <screen x="-1920" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="169" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1592794621171" />
+    <state width="1877" height="169" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1592788564878" />
+    <state width="1877" height="169" key="GridCell.Tab.0.right" timestamp="1592794621171">
+      <screen x="-1920" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="169" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1592794621171" />
+    <state width="1877" height="169" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1592788564878" />
+    <state width="1877" height="169" key="GridCell.Tab.1.bottom" timestamp="1592794621172">
+      <screen x="-1920" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="169" key="GridCell.Tab.1.bottom/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1592794621172" />
+    <state width="1877" height="169" key="GridCell.Tab.1.bottom/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1592788564879" />
+    <state width="1877" height="169" key="GridCell.Tab.1.center" timestamp="1592794621172">
+      <screen x="-1920" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="169" key="GridCell.Tab.1.center/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1592794621172" />
+    <state width="1877" height="169" key="GridCell.Tab.1.center/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1592788564879" />
+    <state width="1877" height="169" key="GridCell.Tab.1.left" timestamp="1592794621172">
+      <screen x="-1920" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="169" key="GridCell.Tab.1.left/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1592794621172" />
+    <state width="1877" height="169" key="GridCell.Tab.1.left/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1592788564879" />
+    <state width="1877" height="169" key="GridCell.Tab.1.right" timestamp="1592794621172">
+      <screen x="-1920" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="169" key="GridCell.Tab.1.right/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1592794621172" />
+    <state width="1877" height="169" key="GridCell.Tab.1.right/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1592788564879" />
+    <state width="1877" height="169" key="GridCell.Tab.2.bottom" timestamp="1592794621172">
+      <screen x="-1920" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="169" key="GridCell.Tab.2.bottom/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1592794621172" />
+    <state width="1877" height="169" key="GridCell.Tab.2.bottom/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1592788564879" />
+    <state width="1877" height="169" key="GridCell.Tab.2.center" timestamp="1592794621172">
+      <screen x="-1920" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="169" key="GridCell.Tab.2.center/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1592794621172" />
+    <state width="1877" height="169" key="GridCell.Tab.2.center/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1592788564879" />
+    <state width="1877" height="169" key="GridCell.Tab.2.left" timestamp="1592794621172">
+      <screen x="-1920" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="169" key="GridCell.Tab.2.left/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1592794621172" />
+    <state width="1877" height="169" key="GridCell.Tab.2.left/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1592788564879" />
+    <state width="1877" height="169" key="GridCell.Tab.2.right" timestamp="1592794621172">
+      <screen x="-1920" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="169" key="GridCell.Tab.2.right/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1592794621172" />
+    <state width="1877" height="169" key="GridCell.Tab.2.right/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1592788564879" />
+    <state x="-1286" y="338" key="NewPhpClassDialog" timestamp="1592796641923">
+      <screen x="-1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="-1286" y="338" key="NewPhpClassDialog/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1592796641923" />
+    <state x="634" y="338" key="NewPhpClassDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1592293655351" />
+    <state x="-1144" y="448" key="NewPhpFileDialog" timestamp="1592465825362">
+      <screen x="-1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="-1144" y="448" key="NewPhpFileDialog/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1592465825362" />
+    <state x="776" y="448" key="NewPhpFileDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1592208913602" />
+    <state x="-1459" y="167" key="SettingsEditor" timestamp="1592794612268">
+      <screen x="-1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="-1459" y="167" key="SettingsEditor/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1592794612268" />
+    <state x="-1168" y="442" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592551648548">
+      <screen x="-1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="-1168" y="442" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1592551648548" />
+    <state x="-1284" y="258" width="647" height="534" key="find.popup" timestamp="1592556533679">
+      <screen x="-1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="-1284" y="258" width="647" height="534" key="find.popup/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1592556533679" />
+    <state x="636" y="258" width="647" height="534" key="find.popup/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1592293773613" />
+    <state x="-1297" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1592554237643">
+      <screen x="-1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="-1297" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1592554237643" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1592293665625" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/application/common/model/Program.php</url>
+          <line>151</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/application/common/model/Program.php</url>
+          <line>152</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/application/common/model/Program.php</url>
+          <line>157</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/application/common/model/Program.php</url>
+          <line>158</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

@@ -48,3 +48,7 @@ export const createCampaign = (data) => {
 export const hideCampaign = (campaignUID) => {
   return api.delete(`${version}/campaign/${campaignUID}`)
 }
+
+export const login = (data) => {
+  return api.post(`${version}/auth/login`, data)
+}
