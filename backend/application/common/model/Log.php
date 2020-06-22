@@ -11,7 +11,6 @@ namespace app\common\model;
 
 class Log extends BaseModel
 {
-    protected $autoWriteTimestamp = 'timestamp';
 
     public function buildWhere($data)
     {

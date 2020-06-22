@@ -4,7 +4,7 @@ use think\facade\Route;
 
 Route::get('model', 'index/index/model');
 Route::get('uuid', 'index/index/uuid');
-Route::post('login', 'api/auth/email');
+// Route::post('login', 'api/auth/email');
 
 
 
@@ -25,7 +25,7 @@ Route::group('api', function () {
 
         Route::post('program', 'api/v1.Program/create');
         Route::put('program/:programUID', 'api/v1.Program/rating');
-        Route::rule('login', 'api/v1.Auth/wx', 'GET|POST');
+        Route::post('login', 'api/v1.Auth/email');
         Route::get('user', 'api/v1.User/all');
     });
 })->header('Access-Control-Allow-Origin', '*')

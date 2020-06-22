@@ -13,10 +13,10 @@ module.exports = {
     // proxyTable: {},
     proxyTable: {
       '/api': {
-        target: 'http://hack.local/',
+        target: 'http://hack.local',
         changeOrigin: true,
         pathRewrite: {
-          '': ''
+          '^/api': ''
         }
       }
     },
