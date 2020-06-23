@@ -9,12 +9,12 @@ use app\common\validate\BaseValidate;
 class LoginFormValidate extends BaseValidate
 {
     public $rule = [
-        'username' => 'require|isNotEmpty|email',
+        'email' => 'require|isNotEmpty|email',
         'password' => 'require|isNotEmpty',
     ] ;
 
     public $message = [
-        'username' => 'correct username is required',
+        'email' => 'correct email is required',
         'password' => 'correct password is required'
     ];
 

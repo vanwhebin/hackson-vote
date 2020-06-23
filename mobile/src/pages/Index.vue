@@ -9,14 +9,14 @@
                 <span class="icon-circle"></span>
             </div>
             <div class="event-time">
-                2020-6-13 14:00-16:30
+                {{ formatTime }}
             </div>
         </div>
         <div class="btn-wrap flex justify-center">
             <div class="btn btn-yellow" @click="startGame"></div>
         </div>
 
-        <div class="toast flex align-center">
+        <div class="toast flex align-center" v-show="!start.status">
 			<span class="icon">
 				<img src="../assets/images/home/tip@2x.png" alt=""/>
 			</span>
@@ -26,22 +26,30 @@
 </template>
 
 <script>
+import { getCampaignInfo } from '@/api/api'
 import config from '@/config'
 import { setStore, getStore } from '@/utils/storage'
+import { timeStampFormat } from '@/utils/util'
 
 export default {
     name: 'index',
     data () {
-        return {}
+        return {
+            formatTime: '',
+            start: {
+                time: null,
+                status: false
+            }
+        }
     },
     created () {
-        const accessToken = window.location.search.substring(1)
-        const ref = accessToken.split('=')
-        if (accessToken && ref && ref[1]) {
+        let ref = window.location.search.substring(1)
+        // const
+        if (ref) {
+            ref = ref.split('=')
             if (ref[0] === 'h') {
+                this.getCampaign(ref[1])
                 setStore(config.campaignRef, ref[1])
-            } else if (ref[0] === 'access_token') {
-                setStore(config.token, ref[1])
             }
         }
     },
@@ -61,9 +69,23 @@ export default {
                 }
             }
         },
+        getCampaign (campaignUID) {
+            const _this = this
+            getCampaignInfo(campaignUID).then((res) => {
+                console.log(res)
+                _this.start.time = res.data.start_time
+                _this.checkTime()
+                _this.formatTimeStamp(res.data.start_time, res.data.end_time)
+            })
+        },
+        formatTimeStamp (startTime, endTime) {
+            this.formatTime = timeStampFormat(startTime).substring(0, 14) + ' ' + timeStampFormat(endTime, 'time').substring(0,5)
+        },
         checkTime () {
             const ts = parseInt((new Date()).getTime() / 1000)
-            this.start = ts >= 1592028000
+            if (this.start.time) {
+                this.start.status = ts >= this.start.time
+            }
         }
     }
 }

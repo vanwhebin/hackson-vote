@@ -84,7 +84,7 @@ class ProgramRating extends BaseModel
      */
     public function disableStatus($campaign, $user)
     {
-        return $this->where(['campaign_id' => $campaign->id, 'rating_user_id' => $user['id']])
+        return $this->where(['campaign_id' => $campaign->id, 'rating_user_id' => $user->id])
             ->update(['status' => self::DISABLED]);
     }
 

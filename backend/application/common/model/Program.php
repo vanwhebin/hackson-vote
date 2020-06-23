@@ -9,6 +9,7 @@ use think\db\exception\DataNotFoundException;
 use think\db\exception\ModelNotFoundException;
 use think\Exception;
 use think\exception\DbException;
+use think\facade\Hook;
 use think\Model;
 use think\model\relation\BelongsTo;
 use think\model\relation\HasManyThrough;
@@ -147,17 +148,24 @@ class Program extends BaseModel
         $where = [
             'program_id' => $program->id,
             'campaign_id' => $campaign->id,
-            'rating_user_id' => $user['id'],
+            'rating_user_id' => $user->id,
         ];
+        $team = new Team();
         $rating = new ProgramRating();
-        $record = $rating->where($where)->find();
-        if (!$record) {
-            // return $rating->insert(array_merge($where, ['score' => $score]));
+        $raters = $team->where(['campaign_id' => $campaign->id])->column('rating');
+        if (!in_array($user->id, $raters)) {
             return false;
         } else {
-            $record->score = $score;
-            return $record->save();
+            $ratingRecord = $rating->where($where)->find();
+            if (!$ratingRecord) {
+                $params =  ['campaign' => $campaign, 'rating' => $user->id];
+                Hook::exec('app\\api\\behavior\\AddRatingBehavior', $params);
+                $ratingRecord = $rating->where($where)->find();
+            }
+            $ratingRecord->score = $score;
+            return $ratingRecord->save();
         }
+        // TODO 当有多维度
         // if (is_string($score)) {
         //     $rating->rating_str = $score;
         //     $ratingResult = json_decode($score, true);
@@ -206,11 +214,10 @@ class Program extends BaseModel
                 'title' => trim($data['title']),
                 'desc' => trim($data['desc']),
                 'campaign_id' => $campaign->id,
-                'user_id' => $user['id'],
+                'user_id' => $user->id,
                 'memo' => !empty($data['memo'])? trim($data['memo']) : '',
             ]);
-            $team = Team::createOne($data);
-            // Hook::exec('app\\api\\behavior\\CreateUUIDBehavior', $program);
+            $team = Team::createOne(array_merge($data, ['campaign_id' => intval($campaign->id)]));
             $program->uuid = createUID($campaign->id, config('secure.program_salt'));
             $program->team_id = $team->id;
             $program->save();

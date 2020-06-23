@@ -84,11 +84,11 @@ export default {
 		back () {
 			this.$emit('showDetail', false)
 		},
-		pop (success) {
+		pop (success, text) {
 			const _this = this
 			if (!success) {
 				_this.toast.img = _this.toast.fail.img
-				_this.toast.text = _this.toast.fail.text
+				_this.toast.text = text ? text: _this.toast.fail.text
 			} else {
 				_this.toast.img = _this.toast.success.img
 				_this.toast.text = _this.toast.success.text
@@ -107,7 +107,7 @@ export default {
 				if (!res.code) {
 					_this.pop(true)
 				} else {
-					_this.pop(false)
+					_this.pop(false, res.msg)
 				}
 			})
 		}

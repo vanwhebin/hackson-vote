@@ -33,6 +33,11 @@ class User extends BaseModel
      */
     public static function getEmailUser($email, $password)
     {
-        return self::where(['email' => $email, 'password' => $password])->findOrEmpty();
+        $user = self::where(['email' => $email])->findOrEmpty();
+        if (!$user) {
+            return false;
+        } else {
+            return $email === $password ? $user : false;
+        }
     }
 }

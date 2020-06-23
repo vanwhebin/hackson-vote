@@ -22,7 +22,7 @@ Route::group('api', function () {
         Route::put('campaign/:campaignUID', 'api/v1.Campaign/update');
         Route::delete('campaign/:campaignUID', 'api/v1.Campaign/delete');
         Route::put('campaign/:campaignUID/rule', 'api/v1.Campaign/rule');
-
+        Route::get('program/:campaignUID', 'api/v1.Program/collection');
         Route::post('program', 'api/v1.Program/create');
         Route::put('program/:programUID', 'api/v1.Program/rating');
         Route::post('login', 'api/v1.Auth/email');

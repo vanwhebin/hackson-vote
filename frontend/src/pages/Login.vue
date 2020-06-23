@@ -1,15 +1,15 @@
 <template>
   <div class="container">
     <div class="top">
-      <h1>登录</h1>
       <div class="main">
         <a-form id="formLogin" class="user-layout-login" ref="formLogin" :form="form" @submit="handleSubmit" :style="{margin: 'auto', 'width': '300px'}">
+          <h1>登录</h1>
           <a-alert v-if="isLoginError" type="error" showIcon style="margin-bottom: 24px;" message="账户或密码错误"></a-alert>
           <a-form-item style="margin-top:20px">
             <a-input
               size="large"
               type="text"
-              placeholder="账户: someone@example.com"
+              placeholder="账户: 企业邮箱"
               v-decorator="[
                 'username',
                 {rules: [{ required: true, message: '请输入邮箱' }, { validator: handleUsernameOrEmail }], validateTrigger: 'change'}
@@ -24,7 +24,7 @@
               size="large"
               type="password"
               autocomplete="false"
-              placeholder="密码: password"
+              placeholder="密码: 企业邮箱"
               v-decorator="[
                 'password',
                 {rules: [{ required: true, message: '请输入密码' }], validateTrigger: 'blur'}
@@ -43,6 +43,7 @@
               type="primary"
               htmlType="submit"
               class="login-button"
+              :style="{width: '100%'}"
               :loading="state.loginBtn"
               :disabled="state.loginBtn"
             >确定</a-button>
@@ -126,7 +127,7 @@ export default {
           const loginParams = { ...values }
           delete loginParams.username
           loginParams['email'] = values.username
-          loginParams.password = md5(values.password)
+          // loginParams.password = md5(values.password)
           login(loginParams)
             .then((res) => this.loginSuccess(res))
             .catch(err => this.requestFailed(err))

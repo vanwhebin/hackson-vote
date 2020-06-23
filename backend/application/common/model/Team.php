@@ -48,6 +48,7 @@ class Team extends BaseModel
         return self::create([
             'rating' => intval($data['rating']),
             'product' => intval($data['product']),
+            'campaign_id' => intval($data['campaign_id']),
             'test' => intval($data['test']),
             'design' => !empty($data['design']) ? intval($data['design']) : null,
             'develop' => $data['develop'],

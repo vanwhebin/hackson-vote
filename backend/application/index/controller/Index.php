@@ -73,7 +73,7 @@ class Index
         $rule = json_decode($campaign['rule'], true);
         $ratings = ProgramRatingFacade::getRating(1);
         $programModel = new Program();
-        // return $rule;
+        return $rule;
         $formatedPrograms = [];
         $updateRating = [];
         array_map(function($item) use (&$formatedPrograms) {

@@ -42,12 +42,9 @@ class Campaign extends BaseController
     {
         // 获取所有的项目
         (new CampaignValidate())->validate();
-        $user = $request->user;
         $campaignUID = $request->param('campaignUID', 0);
         $campaign = CampaignModel::findByUid($campaignUID);
-        $programs = ProgramModel::getRatingProgram($campaign->id, $user['id']);
-
-        return resJson($programs);
+        return resJson($campaign);
     }
 
     /**
@@ -115,9 +112,8 @@ class Campaign extends BaseController
         if ($campaign) {
             return resJson($campaign);
         } else {
-            $code = config('error_code.campaign')['EMPTY'];
-            $msg = config('error_msg');
-            return resJson($request->param(), $msg[$code], $code);
+            $error = errCodeMsg('campaign', 'EMPTY');
+            return resJson($request->param(), $error['msg'], $error['code']);
         }
     }
 
@@ -136,9 +132,8 @@ class Campaign extends BaseController
         if ($campaign->rule->save()) {
             return resJson();
         } else {
-            $code = config('error_code.campaign')['UPDATE_RULE_FAIL'];
-            $msg = config('error_msg');
-            return resJson($request->param(), $msg[$code], $code);
+            $error = errCodeMsg('campaign', 'UPDATE_RULE_FAIL');
+            return resJson($request->param(), $error['msg'], $error['code']);
         }
     }
 
@@ -194,8 +189,6 @@ class Campaign extends BaseController
     public function delete(Request $request)
     {
         (new CampaignValidate())->validate();
-        // $campaign = CampaignModel::where(['uuid' => $request->param('campaignUID', 0)])->find();
-        // return json($campaign);
         if (CampaignModel::where(['uuid' => $request->param('campaignUID', 0)])->find()->delete()) {
             $user = $request->user;
             logger($user['name'].'刪除活动成功', json_encode($request->param()), __CLASS__.'#'.__METHOD__);

@@ -6,6 +6,7 @@ namespace app\api\behavior;
 
 use app\common\model\Program;
 use app\common\model\ProgramRating;
+use app\common\model\User;
 use Exception;
 use think\db\exception\DataNotFoundException;
 use think\db\exception\ModelNotFoundException;
@@ -14,33 +15,28 @@ use think\exception\DbException;
 class AddRatingBehavior
 {
     /**
-     * 创建新的用户评分记录
-     * @param array $campaign
-     * @param array $user
+     * * 评分同时，同时再评分表中增加对应的评分记录
+     * @param array $params
      * @return bool
-     * @throws DataNotFoundException
-     * @throws ModelNotFoundException
-     * @throws DbException
+     * @throws Exception
      */
-    public function run(array $campaign, array $user)
+    public function run(array $params)
     {
-        // 当添加项目和参赛队伍时，同时再评分表中增加对应的评分记录
+        $campaign = $params['campaign'];
+        $ratingID = $params['rating'];
+
         $programRating = new ProgramRating();
-        $existed = $programRating->where(['rating_user_id' => $user['id'], 'campaign_id' => $campaign['id']])->find();
-        if($existed) {
-           return false;
-        }
         $where = [
             'status' => Program::ACTIVE,
-            'campaign_id' => $campaign['id']
+            'campaign_id' => $campaign->id
         ];
         $programIDs = Program::where($where)->column('id');
         $arr = [];
-        array_map(function($item) use (&$arr, $campaign, $user){
+        array_map(function($item) use (&$arr, $campaign, $ratingID){
             $arr[] = [
                 'program_id' => $item,
                 'campaign_id' => $campaign['id'],
-                'rating_user_id' => $user['id'],
+                'rating_user_id' =>  $ratingID,
             ];
             return $item;
         }, $programIDs);

@@ -50,5 +50,5 @@ export const hideCampaign = (campaignUID) => {
 }
 
 export const login = (data) => {
-  return api.post(`${version}/auth/login`, data)
+  return api.post(`${version}/login`, data)
 }

@@ -2,15 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="382370cc-1e86-4108-88fa-4dc0d51aac77" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/yii2settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/src/assets/images/background.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/src/utils/util.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/application/common/model/Log.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/application/common/model/Log.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/application/api/behavior/AddRatingBehavior.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/application/api/behavior/AddRatingBehavior.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/application/api/behavior/GetProgramRatingBehavior.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/application/api/controller/v1/Auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/application/api/controller/v1/Auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/application/api/controller/v1/Campaign.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/application/api/controller/v1/Campaign.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/application/api/controller/v1/Program.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/application/api/controller/v1/Program.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/application/api/validate/LoginFormValidate.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/application/api/validate/LoginFormValidate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/application/common/model/Program.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/application/common/model/Program.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/application/common/model/ProgramRating.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/application/common/model/ProgramRating.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/application/common/model/Team.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/application/common/model/Team.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/application/common/model/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/application/common/model/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/application/http/middleware/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/application/http/middleware/Login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/application/index/controller/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/application/index/controller/Index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/config/secure.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/secure.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/route/route.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/route/route.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/config/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/config/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/api/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Login.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/vue.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/src/api/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/src/pages/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/src/pages/Index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/src/pages/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/src/pages/Login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/src/pages/Score.vue" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/src/pages/Score.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,11 +124,11 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="646" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1591943773795" />
-    <state x="-1230" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1592796840934">
-      <screen x="-1920" y="0" width="1920" height="1050" />
+    <state x="690" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1592895032728">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="-1230" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1592796840934" />
-    <state x="690" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1592193641142" />
+    <state x="690" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1592895032728" />
     <state x="719" y="438" key="ComposerInitDialogKey" timestamp="1591933728443">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -203,11 +220,11 @@
       <screen x="-1920" y="0" width="1920" height="1050" />
     </state>
     <state x="-1168" y="442" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1592551648548" />
-    <state x="-1284" y="258" width="647" height="534" key="find.popup" timestamp="1592556533679">
+    <state x="-1029" y="233" width="647" height="534" key="find.popup" timestamp="1592895558219">
       <screen x="-1920" y="0" width="1920" height="1050" />
     </state>
     <state x="-1284" y="258" width="647" height="534" key="find.popup/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1592556533679" />
-    <state x="636" y="258" width="647" height="534" key="find.popup/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1592293773613" />
+    <state x="-1029" y="233" width="647" height="534" key="find.popup/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1592895558219" />
     <state x="-1297" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1592554237643">
       <screen x="-1920" y="0" width="1920" height="1050" />
     </state>
