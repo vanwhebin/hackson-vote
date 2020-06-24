@@ -27,7 +27,7 @@ Route::group('api', function () {
         Route::post('login', 'api/v1.Auth/email');
         Route::get('user', 'api/v1.User/all');
     });
-})->header('Access-Control-Allow-Origin', '*')
+})->header('Access-Control-Allow-Origin','vote.freebie-queen.com, hackthon.freebie-queen.com')
+    ->header('Access-Control-Allow-Credentials', 'true')
     ->middleware(['loginStatus'])
-    // ->domain(Env::get('api.domain','chat.freebie-queen.com'))
     ->allowCrossDomain();
