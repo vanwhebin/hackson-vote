@@ -1,32 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e53033d3-4ad3-4192-ab08-170de542dd0e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../frontend/dist/static/css/app.4da25e40154aa4db2114aa00d8554e4d.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/dist/static/css/app.4da25e40154aa4db2114aa00d8554e4d.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/dist/static/img/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/dist/static/img/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/dist/static/img/3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/dist/static/img/4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/dist/static/img/5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/dist/static/img/6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/dist/static/img/7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/dist/static/img/8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/dist/static/img/cooperation.dd57984.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/dist/static/img/cooperation.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/dist/static/img/hackson.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/dist/static/img/hson.0779fcf.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/dist/static/img/hson.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/dist/static/img/show.8dc007d.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/dist/static/img/show.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/dist/static/img/show.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/dist/static/js/app.48feaf0bf249c7f1129b.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/dist/static/js/app.48feaf0bf249c7f1129b.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/dist/static/js/manifest.2ae2e69a05c33dfc65f8.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/dist/static/js/manifest.2ae2e69a05c33dfc65f8.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/dist/static/js/vendor.d83e9dee17873d467f74.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/dist/static/js/vendor.d83e9dee17873d467f74.js.map" beforeDir="false" />
-    </list>
+    <list default="true" id="e53033d3-4ad3-4192-ab08-170de542dd0e" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -283,18 +258,17 @@
       <workItem from="1592794668711" duration="1892000" />
       <workItem from="1592851536774" duration="19833000" />
       <workItem from="1592942733549" duration="1555000" />
-      <workItem from="1592977191177" duration="9088000" />
+      <workItem from="1592977191177" duration="9603000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37332000" />
+    <option name="totallyTimeSpent" value="37847000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13645943" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13645943" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -308,7 +282,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.36480686" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.36480686" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
