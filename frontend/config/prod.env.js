@@ -1,5 +1,5 @@
 'use strict'
 module.exports = {
   NODE_ENV: '"production"',
-  API_HOST: "'http://hv.freebie-queen.com'"
+  API_HOST: "'https://hv.freebie-queen.com'"
 }
