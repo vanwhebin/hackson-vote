@@ -8,8 +8,8 @@ axios.defaults.baseURL = process.env.API_HOST
 axios.defaults.timeout = 20000
 axios.defaults.headers.common['Authorization'] = 'Bearer ' + AUTH_TOKEN
 // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
-axios.defaults.headers.post['Content-Type'] = 'application/json'
-axios.defaults.headers.put['Content-Type'] = 'application/json'
+axios.defaults.headers.common['content-type'] = 'application/json'
+// axios.defaults.headers.put['Content-Type'] = 'application/json'
 // axios.defaults.transformRequest = [function (data) { return qs.stringify(data) }]
 // axios.defaults.paramsSerializer = function (params) { return qs.stringify(params, {arrayFormat: 'brackets'}) }
 
@@ -31,7 +31,7 @@ function apiAxios (method, url, params) {
 
 axios.interceptors.request.use(function (config) {
   // 配置config
-  if (!AUTH_TOKEN) {
+  if (!AUTH_TOKEN && window.location.pathname !== '/' && window.location.pathname !== '/login') {
     window.location.href = '/login'
   }
 
@@ -41,6 +41,7 @@ axios.interceptors.request.use(function (config) {
 })
 axios.interceptors.response.use(res => {
   let status = res.status
+  console.log(res)
   if (status === 200) {
     return Promise.resolve(res)
   } else {

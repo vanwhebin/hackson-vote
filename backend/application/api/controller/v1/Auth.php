@@ -66,13 +66,15 @@ class Auth extends BaseController
     public function email(Request $request)
     {
         (new LoginFormValidate())->validate();
-        $data = $request->post();
+        $data = $request->param();
+        // return json($data);
         $user = \app\common\model\User::getEmailUser($data['email'], $data['password']);
         if ($user) {
+            // return json($user);
             $token = Token::getToken($user);
             return resJson($token);
         } else {
-            return json([], 400);
+            return json([], 401);
         }
     }
 

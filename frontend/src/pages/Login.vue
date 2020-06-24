@@ -59,8 +59,9 @@
 </template>
 
 <script>
+import config from '@/config'
+import { setStore } from '@/utils/storage'
 import { login } from '@/api/api'
-import md5 from 'md5'
 export default {
   name: 'Login',
   data () {
@@ -143,6 +144,7 @@ export default {
     },
     loginSuccess (res) {
       console.log(res)
+      setStore(config.token, res.data.access_token)
       this.$router.push({ path: '/' })
       this.isLoginError = false
     },

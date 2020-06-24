@@ -52,3 +52,7 @@ export const hideCampaign = (campaignUID) => {
 export const login = (data) => {
   return api.post(`${version}/login`, data)
 }
+
+export const getResultData = (campaignUID) => {
+  return api.get(`${version}/campaign/${campaignUID}/result`)
+}

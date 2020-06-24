@@ -42,18 +42,8 @@ export default {
             }
         }
     },
-    created () {
-        let ref = window.location.search.substring(1)
-        // const
-        if (ref) {
-            ref = ref.split('=')
-            if (ref[0] === 'h') {
-                this.getCampaign(ref[1])
-                setStore(config.campaignRef, ref[1])
-            }
-        }
-    },
     mounted () {
+        this.getCampaign()
         this.checkTime()
     },
     methods: {
@@ -69,10 +59,11 @@ export default {
                 }
             }
         },
-        getCampaign (campaignUID) {
+        getCampaign () {
             const _this = this
-            getCampaignInfo(campaignUID).then((res) => {
+            getCampaignInfo().then((res) => {
                 console.log(res)
+                setStore(config.campaignRef, res.data.uuid)
                 _this.start.time = res.data.start_time
                 _this.checkTime()
                 _this.formatTimeStamp(res.data.start_time, res.data.end_time)

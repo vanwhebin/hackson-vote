@@ -18,6 +18,7 @@ class Program extends BaseModel
 {
     const ACTIVE = 1;
     const INACTIVE = 0;
+    const DEFAULT_RATING = 0;
 
 	/**
 	 * 关联活动
@@ -64,7 +65,7 @@ class Program extends BaseModel
         } ,'product' => function($query){
             $query->field(['name', 'id'])-> visible(['name']);
         }])->visible(['title', 'desc', 'memo', 'uuid', 'id'])
-            ->where(['campaign_id' => $campaignID])
+            ->where(['campaign_id' => $campaignID, 'status' => Program::ACTIVE])
             ->select();
     }
 
@@ -95,26 +96,19 @@ class Program extends BaseModel
     {
         $programs = self::getAllPrograms($campaignID)->toArray();
         $programsRatings = self::getRating($campaignID, $userID)->toArray();
-        $times = 0;
-        $programs = array_map(function(&$item) use ($programsRatings, &$times) {
+        $status = ProgramRating::where(['status' => ProgramRating::ENABLED, 'rating_user_id' => $userID])->value('status');
+        $programs = array_map(function(&$item) use ($programsRatings) {
             foreach($programsRatings as $rating) {
                 if ($rating['program_id'] == $item['id']) {
                     $item['self_rating'] = $rating['score'];
                     $item['rating_status'] = $rating['status'];
-                    if ($rating['score']) {
-                        $times++;
-                    }
                 }
             }
-
             unset($item['id']);
             return $item;
         }, $programs);
-        if (count($programs) == $times) {
-            return ['status' => 1, 'programs' => $programs,];
-        } else {
-            return ['status' => 0, 'programs' => $programs,];
-        }
+
+        return ['status' => $status === 0 ? 0 : 1, 'programs' => $programs,];
     }
 
 
@@ -228,6 +222,18 @@ class Program extends BaseModel
         }
         Db::commit();
         return true;
+    }
+
+    /**
+     * 查找是否有未完成计算的评分项目
+     * @return array|PDOStatement|string|Model|null
+     * @throws DataNotFoundException
+     * @throws DbException
+     * @throws ModelNotFoundException
+     */
+    public function checkRating()
+    {
+        return $this->where(['rating' => self::DEFAULT_RATING, 'status' => self::ACTIVE])->find();
     }
 
 

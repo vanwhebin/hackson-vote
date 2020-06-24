@@ -31,8 +31,8 @@ class GetCampaignRatingBehavior
             $rating = 0;
             foreach($rule as $username=>$weight) {
                 if (isset($program[$username]) && !empty($program[$username])) {
-                    $peronalRating = round($program[$username] * $weight / 100, 2);
-                    $rating = $rating + $peronalRating;
+                    $personalRating = round($program[$username] * $weight / 100, 2);
+                    $rating = $rating + $personalRating;
                 }
             }
             $updateRating[] = ['id' => $key, 'rating' => $rating];

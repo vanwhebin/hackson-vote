@@ -56,7 +56,7 @@ class Token
         $payload = [
             'iss' => Config::get('domain'), //签发者
             'iat' => time(), //什么时候签发的
-            'exp' => time() + 7200, //过期时间
+            'exp' => time() + (3600 * 6), //过期时间
             'user' => $user,
         ];
         return JWT::encode($payload, $key);

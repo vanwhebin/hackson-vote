@@ -8,6 +8,3 @@ export default {
   name: 'App'
 }
 </script>
-<style >
-  /*@import '~vux/src/styles/reset.less';*/
-</style>

@@ -4,20 +4,19 @@ use think\facade\Route;
 
 Route::get('model', 'index/index/model');
 Route::get('uuid', 'index/index/uuid');
+// Route::get('api/v1/campaign/latest', 'api/v1.Campaign/latest');
+Route::get('api/v1/campaign/:campaignUID/result', 'api/v1.Campaign/top');
 // Route::post('login', 'api/auth/email');
-
-
 
 Route::group('api', function () {
     Route::group('v1', function () {
-        // 平台推送分站产品数据
 
-        Route::get('campaign/latest', 'api/v1.Campaign/latest');
         Route::get('campaign/list', 'api/v1.Campaign/collections');
+        Route::get('campaign/latest', 'api/v1.Campaign/latest');
+        // Route::get('campaign/:campaignUID/result', 'api/v1.Campaign/top');
         Route::put('campaign/:campaignUID/vote', 'api/v1.Campaign/batchSubmit');
         Route::get('campaign/:campaignUID/rater', 'api/v1.Campaign/rater');
         Route::get('campaign/:campaignUID', 'api/v1.Campaign/index');
-        Route::get('campaign/:campaignUID/result', 'api/v1.Campaign/top');
         Route::post('campaign', 'api/v1.Campaign/create');
         Route::put('campaign/:campaignUID', 'api/v1.Campaign/update');
         Route::delete('campaign/:campaignUID', 'api/v1.Campaign/delete');

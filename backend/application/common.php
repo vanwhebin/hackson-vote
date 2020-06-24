@@ -6,11 +6,13 @@ use think\facade\Log;
 
 
 function errCodeMsg($type, $str) {
-    $errorCodes = config('error_code');
-    $messages = config('error_msg');
-    $errCode = !empty($errorCodes[$type]) ? $errorCodes[$type] : 110;
-    $errMsg = !empty($messages[$str]) ? $messages[$str] : $str;
-    return ['code' => $errCode, 'msg' => $errMsg];
+    $errorCodes = config('error_code.');
+    $messages = config('error_msg.');
+    $errCodes = !empty($errorCodes[$type]) ? $errorCodes[$type] : 110;
+    $code = !empty($errCodes[$str]) ? $errCodes[$str] : 110;
+    $errMsg = !empty($messages[$code]) ? $messages[$code] : $str;
+    // return [$code, $errMsg ];
+    return ['code' => $code, 'msg' => $errMsg];
 }
 
 function createUID($str, $salt){

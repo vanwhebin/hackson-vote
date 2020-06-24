@@ -17,8 +17,8 @@ use think\model\relation\BelongsTo;
 class ProgramRating extends BaseModel
 {
     const DEFAULT_SCORE = 0;
-    const ENABLED = 0;
-    const DISABLED = 1;
+    const ENABLED = 0;  // 可以修改
+    const DISABLED = 1;  // 不可以修改
 
     /**
      * 参赛项目
@@ -59,7 +59,11 @@ class ProgramRating extends BaseModel
      */
     public function checkRecord($campaignID)
     {
-        return  $this->where(['campaign_id'=> $campaignID, 'score' => self::DEFAULT_SCORE])->find();
+        return  $this->where([
+            'campaign_id'=> $campaignID,
+            'score' => self::DEFAULT_SCORE,
+            'status' => self::ENABLED
+        ])->find();
     }
 
 

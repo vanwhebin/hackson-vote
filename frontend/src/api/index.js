@@ -32,27 +32,10 @@ function apiAxios (method, url, params) {
 axios.interceptors.request.use(function (config) {
   // 配置config
   config.headers.Accept = 'application/json'
-  // let useId = getStore('user_id')
-  // let useEmail = getStore('user_email')
-  // if (useId) {
-  //   if (config.method === 'get') {
-  //     if (config.params) {
-  //       config.params['user_id'] = useId
-  //       config.params['email'] = useEmail
-  //     } else {
-  //       config.params = {user_id: useId, email: useEmail}
-  //     }
-  //   } else {
-  //     if (config.data) {
-  //       config.data['user_id'] = useId
-  //       config.data['email'] = useEmail
-  //     } else {
-  //       config.data = {user_id: useId, email: useEmail}
-  //     }
-  //   }
-  // }
+  if (!AUTH_TOKEN && window.location.pathname !== '/' && window.location.pathname !== '/login') {
+    window.location.href = '/login'
+  }
 
-  // console.log(config)
   return config
 })
 axios.interceptors.response.use(res => {

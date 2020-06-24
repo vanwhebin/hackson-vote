@@ -14,7 +14,8 @@ return [
     'auth_salt' => 'c0G41BQ$YLwH',
     'token_salt' => 'c041241B412Q$YLwH',
     'white' => [
-        '/api/v1/login'
+        '/api/v1/login',
+        '/api/v1/campaign/latest',
     ],
     'program_salt' => 'hackthon_program',
     'campaign_salt' => 'hackthon_campaign',

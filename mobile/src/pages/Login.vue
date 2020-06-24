@@ -15,12 +15,12 @@
           </label>
           </div>
           <div>
-            <button type="submit" class="btn" @click.prevent="handleSubmit" :disabled="state.loginBtn">提交</button>
+            <button class="btn" @click.prevent="handleSubmit" :disabled="state.loginBtn">提交</button>
           </div>
         </form>
       </div>
     </div>
-    <div class="back"><a href="javascript:void(0)" class="link text-yellow" @click="$router.push({path: 'hackthon'})">返回</a></div>
+    <div class="back"><a href="javascript:void(0)" class="link text-yellow" @click="$router.push({name: 'home'})">返回</a></div>
     <div class="toast flex align-center" v-show="toast.status">
         <span class="icon">
             <img :src="toast.img" alt=""/>
@@ -31,7 +31,7 @@
 </template>
 
 <script>
-  import { login } from '@/api/api'
+  import { postLogin } from '@/api/api'
   import { setStore } from '@/utils/storage'
   import config  from '@/config'
   export default {
@@ -82,18 +82,23 @@
         const regex = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/
         return !!(regex.test(values['email']) && values['password']);
       },
-      handleSubmit () {
-        // e.preventDefault()
+      handleSubmit (e) {
+        e.preventDefault()
+        // return false
         console.log(this.form)
+        const _this = this
         if (this.validate(this.form)) {
           this.state.loginBtn = true
           const data = Object.assign({}, this.form)
           console.log(data)
-          login(data).then((res) => this.loginSuccess(res))
-            .catch(err => this.loginFail(err))
-            .finally(() => {
-              this.state.loginBtn = false
-            })
+          postLogin(data)
+            .then((res) => {
+              _this.loginSuccess(res)
+            }).catch((err) => {
+              _this.loginFail(err)
+            }).finally(() => {
+              _this.state.loginBtn = false
+          })
         } else {
           setTimeout(() => {
             // this.state.loginBtn = false
@@ -103,7 +108,7 @@
       loginSuccess (res) {
         console.log(res.data)
         setStore(config.token, res.data.access_token)
-        this.$router.push({ path: '/hackthon' })
+        this.$router.push({ name: 'programs' })
       },
       loginFail (err) {
         console.log(err)

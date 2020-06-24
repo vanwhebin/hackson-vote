@@ -43,16 +43,15 @@ class Program extends BaseController
     {
         (new ProgramValidate())->scene('score')->validate();
         $data = $request->param();
+        $user = $request->user;
         $campaign = CampaignModel::findByUid($data['campaignUID']);
         $program = ProgramModel::findByUid($data['programUID']);
-        $user = $request->user;
-        // $userInfo = Token::getCurrentUserInfo();
-        // return resJson([$campaign, $program, $user, $userInfo]);
         $res = ProgramModel::updateRating($campaign, $program, $user, $data['score']);
         if ($res) {
             return resJson();
         } else {
-            $err = errCodeMsg('program', 'UPDATE_FAIL');
+            $err = errCodeMsg('program', 'RATING_FAIL');
+            // return json($err);
             return resJson($data, $err['msg'], $err['code']);
         }
     }
