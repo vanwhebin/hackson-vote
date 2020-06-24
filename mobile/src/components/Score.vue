@@ -6,7 +6,7 @@
 			<span style="font-size: 0.32rem; padding-top: .1rem;">{{sum}}</span>
 		</div>
 		<div class="h text-white text-center">
-			<div class="title">{{selected.title}}</div>
+			<div class="title">{{selected.title | cut }}</div>
 			<div class="auth">提出人: {{selected.product.name}}</div>
 		</div>
 		<div class="h4">
@@ -57,6 +57,7 @@ export default {
 	},
 	data () {
 		return {
+			selectScore: 1,
 			toast: {
 				img: '',
 				status: false,
@@ -74,21 +75,31 @@ export default {
 	},
 	computed: {
 		score () {
-			return this.selected.self_rating ? this.selected.self_rating : 1
+			return this.selected.self_rating ? this.selected.self_rating : this.selectScore
+		}
+	},
+	filters: {
+		cut (val) {
+			if (val.length > 10) {
+				return val.substring(0, 10) + '...'
+			} else {
+				return val
+			}
 		}
 	},
 	methods: {
 		evaluate (val) {
+			this.selectScore = val
 			this.$emit('selectScore', val)
 		},
 		back () {
 			this.$emit('showDetail', false)
 		},
-		pop (success) {
+		pop (success, text='') {
 			const _this = this
 			if (!success) {
 				_this.toast.img = _this.toast.fail.img
-				_this.toast.text = _this.toast.fail.text
+				_this.toast.text = text ? text : this.toast.fail.text
 			} else {
 				_this.toast.img = _this.toast.success.img
 				_this.toast.text = _this.toast.success.text
@@ -106,7 +117,7 @@ export default {
 				if (!res.code) {
 					_this.pop(true)
 				} else {
-					_this.pop(false)
+					_this.pop(false, res.msg)
 				}
 			})
 		}

@@ -51,7 +51,6 @@ class Program extends BaseController
             return resJson();
         } else {
             $err = errCodeMsg('program', 'RATING_FAIL');
-            // return json($err);
             return resJson($data, $err['msg'], $err['code']);
         }
     }

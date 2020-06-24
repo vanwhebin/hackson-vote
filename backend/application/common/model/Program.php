@@ -148,6 +148,7 @@ class Program extends BaseModel
         $rating = new ProgramRating();
         $raters = $team->where(['campaign_id' => $campaign->id])->column('rating');
         if (!in_array($user->id, $raters)) {
+            logger('评分失败,非评委', json_encode([$raters, $user]), __CLASS__. "##". __METHOD__);
             return false;
         } else {
             $ratingRecord = $rating->where($where)->find();

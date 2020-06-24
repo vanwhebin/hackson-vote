@@ -3,8 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="382370cc-1e86-4108-88fa-4dc0d51aac77" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/route/route.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/route/route.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/application/api/controller/v1/Program.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/application/api/controller/v1/Program.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/application/common/model/Program.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/application/common/model/Program.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/src/components/Score.vue" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/src/components/Score.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/src/pages/Score.vue" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,11 +200,11 @@
       <screen x="-1920" y="0" width="1920" height="1050" />
     </state>
     <state x="-1168" y="442" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1592551648548" />
-    <state x="-1029" y="233" width="647" height="534" key="find.popup" timestamp="1592895558219">
+    <state x="-1029" y="233" width="647" height="534" key="find.popup" timestamp="1592992998856">
       <screen x="-1920" y="0" width="1920" height="1050" />
     </state>
     <state x="-1284" y="258" width="647" height="534" key="find.popup/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1592556533679" />
-    <state x="-1029" y="233" width="647" height="534" key="find.popup/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1592895558219" />
+    <state x="-1029" y="233" width="647" height="534" key="find.popup/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1592992998856" />
     <state x="-1297" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1592554237643">
       <screen x="-1920" y="0" width="1920" height="1050" />
     </state>
