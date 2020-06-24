@@ -3,7 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="e53033d3-4ad3-4192-ab08-170de542dd0e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/application/api/controller/v1/Program.php" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/application/api/controller/v1/Program.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/application/common/model/Program.php" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/application/common/model/Program.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/css/app.df050879.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/js/app.ae79d307.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Score.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Score.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Score.vue" beforeDir="false" />
     </list>
@@ -265,12 +270,12 @@
       <workItem from="1592794668711" duration="1892000" />
       <workItem from="1592851536774" duration="19833000" />
       <workItem from="1592942733549" duration="1555000" />
-      <workItem from="1592977191177" duration="11878000" />
+      <workItem from="1592977191177" duration="12498000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40122000" />
+    <option name="totallyTimeSpent" value="40742000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />

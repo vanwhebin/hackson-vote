@@ -96,7 +96,7 @@ class Program extends BaseModel
     {
         $programs = self::getAllPrograms($campaignID)->toArray();
         $programsRatings = self::getRating($campaignID, $userID)->toArray();
-        $status = ProgramRating::where(['status' => ProgramRating::ENABLED, 'rating_user_id' => $userID])->value('status');
+        $status = ProgramRating::where(['status' => ProgramRating::DISABLED, 'rating_user_id' => $userID])->value('status');
         $programs = array_map(function(&$item) use ($programsRatings) {
             foreach($programsRatings as $rating) {
                 if ($rating['program_id'] == $item['id']) {
@@ -108,7 +108,7 @@ class Program extends BaseModel
             return $item;
         }, $programs);
 
-        return ['status' => $status === 0 ? 0 : 1, 'programs' => $programs,];
+        return ['status' => $status === 1 ? 1 : 0, 'programs' => $programs,];
     }
 
 
