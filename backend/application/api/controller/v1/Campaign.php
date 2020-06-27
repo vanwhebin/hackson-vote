@@ -114,7 +114,7 @@ class Campaign extends BaseController
     {
         $campaign = CampaignModel::findLatest();
         if ($campaign) {
-            return resJson($campaign);
+            return resJson([$campaign, time()]);
         } else {
             $error = errCodeMsg('campaign', 'EMPTY');
             return resJson($request->param(), $error['msg'], $error['code']);
@@ -132,8 +132,8 @@ class Campaign extends BaseController
         (new CampaignValidate())->validate();
         $data = $request->param();
         $campaign = CampaignModel::findByUid($data['campaignUID']);
-        $campaign->rule->content = json_encode($data['rule']);
-        if ($campaign->rule->save()) {
+        $campaign->rule = json_encode($data['rule']);
+        if ($campaign->save()) {
             return resJson();
         } else {
             $error = errCodeMsg('campaign', 'UPDATE_RULE_FAIL');

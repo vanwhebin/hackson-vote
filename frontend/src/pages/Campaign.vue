@@ -17,7 +17,7 @@
       </div>
 
     </a-layout-header>
-    <a-layout-content class="content-layout" style="margin-top: 100px">
+    <a-layout-content class="content-layout" :style="{'margin-top': '100px','margin-bottom':'50px'}">
       <div class="content-box">
         <a-card>
           <div class="operate">
@@ -147,7 +147,7 @@
         </a-card>
       </div>
     </a-layout-content>
-    <a-layout-footer class="layout-footer" :style="{position: 'fixed',bottom: '0'}">
+    <a-layout-footer class="layout-footer">
       <div class="footer-content">
         <div class="footer-left">
           <div class="foot-nav" style="color:#9ba5b4;width:300px">
@@ -306,7 +306,8 @@ export default {
         }
         sum = sum + parseInt(arr[i])
       }
-      if (sum > 100) {
+      console.log(sum)
+      if (sum !== 100) {
         this.$notification.warning({ message: '评分权重有误', description: '请确保权重之和为100%' })
         this.addLoading = false
         return false
@@ -489,5 +490,8 @@ export default {
     display: flex;
     flex-direction: row;
     width: 1200px;
+  }
+  .content-box {
+    width: 100%
   }
 </style>

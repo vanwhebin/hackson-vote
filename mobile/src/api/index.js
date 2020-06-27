@@ -35,7 +35,6 @@ axios.interceptors.request.use(function (config) {
     window.location.href = '/login'
   }
 
-
   config.headers.Accept = 'application/json'
   return config
 })

@@ -16,7 +16,7 @@ class CreateProgramValidate extends BaseValidate
         'product' => 'require|isPositiveInteger',
         'develop' => 'require',
         'test' => 'require',
-        'rating' => 'require|isPositiveInteger',
+        // 'rating' => 'require|isPositiveInteger',
     ];
 
     public $message = [
@@ -26,7 +26,7 @@ class CreateProgramValidate extends BaseValidate
         // 'team' => '请提供团队成员',
         'product' => '请提供项目发起人',
         'develop' => '请提供项目开发',
-        'rating' => '请提供项目评分人员',
+        // 'rating' => '请提供项目评分人员',
     ];
 
 }

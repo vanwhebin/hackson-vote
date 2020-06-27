@@ -96,7 +96,7 @@
               </a-col>
               <a-col :span="5">
                 <a-form-item label="评分人员" has-feedback>
-                  <a-select v-decorator="['rating', { rules: [{required: true, message: '请选择评分人员'}] }]">
+                  <a-select v-decorator="['rating']">
                     <a-select-option v-for="(user, ind) in team" :value="user.id" :key="ind" :label="user.name">
                       {{user.name}}
                     </a-select-option>
@@ -105,7 +105,7 @@
               </a-col>
             </a-row>
             <a-form-item >
-              <a-button type="primary" @click="onSubmit">提交</a-button>
+              <a-button type="primary" @click="onSubmit" :loading="submitLoading">提交</a-button>
             </a-form-item>
           </a-form>
         </a-card>
@@ -174,6 +174,7 @@ export default {
         test: {},
         rating: {}
       },
+      submitLoading: false,
       teamUserID: [],
       team: [],
       campaign: {
@@ -213,11 +214,13 @@ export default {
     },
     onSubmit () {
       const _this = this
+      this.submitLoading = true
       this.form.validateFields((err, values) => {
         if (!err) {
           console.log(values)
           const data = Object.assign({}, values, { campaignUID: _this.campaign.UID, develop: values['develop'].join(',') })
           postProgram(data).then((res) => {
+            _this.submitLoading = false
             console.log(res)
             if (!res.code) {
               _this.$message.success('创建成功')

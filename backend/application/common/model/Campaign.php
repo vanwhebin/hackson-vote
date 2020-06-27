@@ -13,6 +13,8 @@ use think\Paginator;
 
 class Campaign extends BaseModel
 {
+    const ACTIVE = 1;
+    const INACTIVE = 0;
     /**
      * 每次活动的评分的规则
      * @return BelongsTo
@@ -97,7 +99,10 @@ class Campaign extends BaseModel
      */
     public function findLatest()
     {
-        return self::where('start_time', '>', time())
+        // $time = time();
+        // ini_set('date.timezone', 'UTC');
+        // return [$time, time()];
+        return self::where( 'start_time', '>', time())
             ->order('create_time', 'ASC')
             ->field(['uuid', 'title', 'desc', 'start_time', 'end_time'])
             ->find();
