@@ -17,7 +17,7 @@
       </div>
 
     </a-layout-header>
-    <a-layout-content class="content-layout" :style="{'margin-top': '100px','margin-bottom':'50px'}">
+    <a-layout-content class="content-layout" :style="{'margin-top': '100px','margin-bottom':'50px','min-height':'500px'}">
       <div class="content-box">
         <a-card>
           <div class="operate">
