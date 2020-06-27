@@ -102,7 +102,7 @@ class Campaign extends BaseModel
         // $time = time();
         // ini_set('date.timezone', 'UTC');
         // return [$time, time()];
-        return self::where( 'start_time', '>', time())
+        return self::where( 'start_time', '>', time())->where('create_time', '<', time())
             ->order('create_time', 'ASC')
             ->field(['uuid', 'title', 'desc', 'start_time', 'end_time'])
             ->find();
