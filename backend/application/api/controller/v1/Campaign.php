@@ -113,8 +113,9 @@ class Campaign extends BaseController
     public function latest(Request $request)
     {
         $campaign = CampaignModel::findLatest();
+        resJson([$campaign, time()]);
         if ($campaign) {
-            return resJson([$campaign, time()]);
+            return resJson($campaign);
         } else {
             $error = errCodeMsg('campaign', 'EMPTY');
             return resJson($request->param(), $error['msg'], $error['code']);
