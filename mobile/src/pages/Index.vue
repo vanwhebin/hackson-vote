@@ -48,7 +48,7 @@ export default {
     },
     methods: {
         startGame (e) {
-            if (!this.start) {
+            if (!this.start.status) {
                 return false
             } else {
                 if (!getStore(config.token)) {
