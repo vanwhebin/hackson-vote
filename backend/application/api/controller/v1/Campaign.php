@@ -196,7 +196,7 @@ class Campaign extends BaseController
         (new CampaignValidate())->validate();
         if (CampaignModel::where(['uuid' => $request->param('campaignUID', 0)])->find()->delete()) {
             $user = $request->user;
-            logger($user['name'].'刪除活动成功', json_encode($request->param()), __CLASS__.'#'.__METHOD__);
+            logger($user->name.'刪除活动成功', json_encode($request->param()), __CLASS__.'#'.__METHOD__);
             return resJson();
         } else {
             logger('刪除活动失败', json_encode($request->param()), __CLASS__.'#'.__METHOD__);
