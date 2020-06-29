@@ -1,7 +1,9 @@
 // import qs from 'qs'
 import axios from 'axios'
+import config from '../config'
 import { getStore } from '../utils/storage'
-const AUTH_TOKEN = getStore('token') ? getStore('token') : ''
+const TOKEN_KEY = config.token
+const AUTH_TOKEN = getStore(TOKEN_KEY) ? getStore(TOKEN_KEY) : ''
 
 // 引用axios
 axios.defaults.baseURL = process.env.API_HOST
@@ -31,16 +33,17 @@ function apiAxios (method, url, params) {
 
 axios.interceptors.request.use(function (config) {
   // 配置config
-  if (!AUTH_TOKEN && window.location.pathname !== '/' && window.location.pathname !== '/login') {
+  const token = getStore(TOKEN_KEY)
+  if (!token && window.location.pathname !== '/' && window.location.pathname !== '/login') {
     window.location.href = '/login'
+    return false
   }
-
+  config.headers.Authorization = 'Bearer ' + token
   config.headers.Accept = 'application/json'
   return config
 })
 axios.interceptors.response.use(res => {
   let status = res.status
-  console.log(res)
   if (status === 200) {
     return Promise.resolve(res)
   } else {

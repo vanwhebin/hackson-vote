@@ -51,6 +51,7 @@
 <script>
     import { getProgramList, postCampaignVote } from '@/api/api'
     import Score from '@/components/Score'
+    import config from '@/config'
     import { getStore } from '@/utils/storage'
     import Loading from '@/components/Loading'
 
@@ -109,7 +110,7 @@
             },
             submit () {
                 const _this = this
-                const campaignUID = getStore('campaignUID')
+                const campaignUID = getStore(config.campaignRef)
                 for (let i = 0; i < this.programs.length; i++) {
                     if (!this.programs[i].self_rating) {
                         _this.pop(false)
@@ -128,7 +129,7 @@
                 })
             },
             init () {
-                const campaignUID = getStore('campaignUID')
+                const campaignUID = getStore(config.campaignRef)
                 getProgramList(campaignUID).then((res) => {
                     console.log(res)
                     this.submitted = Boolean(res.data.status)
