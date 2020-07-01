@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e53033d3-4ad3-4192-ab08-170de542dd0e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../frontend/src/pages/Program.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/application/api/controller/v1/Campaign.php" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/application/api/controller/v1/Campaign.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/application/common/model/Campaign.php" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/application/common/model/Campaign.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/dist/static/css/app.eca150d6bd409c6054ae1a96097a8db1.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/dist/static/css/app.eca150d6bd409c6054ae1a96097a8db1.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/dist/static/js/app.a26cd4ef2349fe64070a.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/dist/static/js/app.a26cd4ef2349fe64070a.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/dist/static/js/manifest.2ae2e69a05c33dfc65f8.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/dist/static/js/manifest.2ae2e69a05c33dfc65f8.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/api/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/api/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/pages/Campaign.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/pages/Campaign.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/pages/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/pages/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/pages/Start.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/pages/Start.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/utils/storage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/utils/storage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/pages/Program.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/pages/Program.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -110,8 +94,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/api/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="42" column="15" lean-forward="true" selection-start-line="35" selection-start-column="1" selection-end-line="42" selection-end-column="15" />
+            <state relative-caret-position="136">
+              <caret line="56" column="39" lean-forward="true" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
               <folding>
                 <element signature="e#23#48#0" expanded="true" />
               </folding>
@@ -322,12 +306,12 @@
       <workItem from="1592942733549" duration="1555000" />
       <workItem from="1592977191177" duration="13335000" />
       <workItem from="1593243047629" duration="1246000" />
-      <workItem from="1593247641690" duration="7742000" />
+      <workItem from="1593247641690" duration="8495000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50567000" />
+    <option name="totallyTimeSpent" value="51320000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -347,7 +331,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.5092091" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.50858366" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -559,8 +543,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/api/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="42" column="15" lean-forward="true" selection-start-line="35" selection-start-column="1" selection-end-line="42" selection-end-column="15" />
+        <state relative-caret-position="136">
+          <caret line="56" column="39" lean-forward="true" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
           <folding>
             <element signature="e#23#48#0" expanded="true" />
           </folding>

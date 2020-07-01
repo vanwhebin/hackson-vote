@@ -31,7 +31,6 @@
             :loading="loading"
             item-layout="horizontal"
             :data-source="data"
-            :pagination="pagination"
           >
             <a-list-item slot="renderItem" slot-scope="item">
               <a-list-item-meta
@@ -41,6 +40,7 @@
                 <a-avatar
                   slot="avatar"
                   src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAYAAADFeBvrAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAITSURBVGhD7deviwJBFMDx+59EjCIWg2BZmwo2fyQRtNjEJoJRi2g3CYrJJIJWwSBYBIPBaFqY4z3YZVyf3s7srDfIhG9w3lvYD7cn7o9t2+ybMiDdMyDdMyDdMyDdMyDdMyDZjscjKxQKrFgsknNVfQw0Ho9ZJBLBqLmqPgaq1+uIqVQq5FxVSkCNRoOl02m23+/J+f1+Z8lkEkHwl4Kz8/mM18C13v0gBQbBDTmP0na7JXc2m427czgc8OxyubhnKlGBQDxmuVySO9BgMMCdVCr1cA7XqEZJg/xioGq1inutVutppholBRLB3G43Fo1GcXc2m5E7KlHCIBEMtFqt3P3r9UruQKpQQiBRDNTv93E/l8uRcz4VKN8gGQyUz+fxml6vR869BUX5AnW7XSkM/9W8Xq/JHSoe1W63yZ1XhQpaLBZ4TTweJ+evCh0EyTxynU4H92u1Gjmn4jGhPXJOoqhMJoO7k8mEnHsLioGEQJBf1Ol0cvecnzvvUoGBhEGQH9R0OsW5ZVnknE8VBpICQX+hms0mzuD/yDvjU4mBpEHQO1QikcDz+Xz+cM6nGgMFAkE8ynl9gPci+ByLxV7+3NHy9cEJboh/wRuNRnijpVLpaddJ2xc8qnK5jKDhcEjOwywUkPMo7XY7ch5moYCsbFb5o+S3UED/mQHpngHpngHpngHpngHpngHpngHp3peBbPYLOZxI41wXsikAAAAASUVORK5CYII="></a-avatar>
+                <div>{{ item.product.name }}</div>
               </a-list-item-meta>
             </a-list-item>
           </a-list>
@@ -136,9 +136,7 @@ export default {
       getLatestCampaign().then((r) => {
         if (!r.code) {
           getProgramList(r.data.uuid, pagination).then((res) => {
-            _this.data = res.data.data
-            _this.pagination.pageNum = parseInt(res.data.current_page) ? parseInt(res.data.current_page) : 10
-            _this.pagination.pageSize = parseInt(res.data.per_page) ? parseInt(res.data.current_page) : 1
+            _this.data = res.data.programs
           })
         }
       })
