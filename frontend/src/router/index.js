@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from '@/pages/Home'
 import Start from '@/pages/Start'
 import Campaign from '@/pages/Campaign'
+import Program from '@/pages/Program'
 import Login from '@/pages/Login'
 import Result from '@/pages/Result'
 
@@ -17,7 +18,7 @@ export default new Router({
       component: Home
     },
     {
-      path: '/program',
+      path: '/start',
       name: 'start',
       component: Start
     },
@@ -35,6 +36,11 @@ export default new Router({
       path: '/campaign',
       name: 'campaign',
       component: Campaign
+    },
+    {
+      path: '/program',
+      name: 'program',
+      component: Program
     }
   ]
 })

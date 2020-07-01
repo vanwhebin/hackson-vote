@@ -40,7 +40,6 @@ class Campaign extends BaseController
      */
     public function index(Request $request)
     {
-        // 获取所有的项目
         (new CampaignValidate())->validate();
         $campaignUID = $request->param('campaignUID', 0);
         $campaign = CampaignModel::findByUid($campaignUID);

@@ -2,11 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e53033d3-4ad3-4192-ab08-170de542dd0e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../frontend/src/pages/Program.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/application/api/controller/v1/Campaign.php" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/application/api/controller/v1/Campaign.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/application/common/model/Campaign.php" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/application/common/model/Campaign.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/dist/static/css/app.eca150d6bd409c6054ae1a96097a8db1.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/dist/static/css/app.eca150d6bd409c6054ae1a96097a8db1.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/dist/static/js/app.a26cd4ef2349fe64070a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/dist/static/js/app.a26cd4ef2349fe64070a.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/dist/static/js/manifest.2ae2e69a05c33dfc65f8.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/dist/static/js/manifest.2ae2e69a05c33dfc65f8.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/api/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/api/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/pages/Campaign.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/pages/Campaign.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/pages/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/pages/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/pages/Start.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/pages/Start.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/utils/storage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/utils/storage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/List.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/storage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/storage.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -49,7 +62,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/List.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="171">
@@ -94,11 +107,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/api/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="855">
-              <caret line="45" column="25" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
+            <state relative-caret-position="399">
+              <caret line="42" column="15" lean-forward="true" selection-start-line="35" selection-start-column="1" selection-end-line="42" selection-end-column="15" />
               <folding>
                 <element signature="e#23#48#0" expanded="true" />
               </folding>
@@ -109,8 +122,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/utils/storage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="20" selection-start-line="20" selection-end-line="20" selection-end-column="24" />
+            <state relative-caret-position="1007">
+              <caret line="53" column="30" lean-forward="true" selection-end-line="77" />
             </state>
           </provider>
         </entry>
@@ -186,8 +199,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-2019" />
-    <option name="y" value="151" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1066" />
   </component>
@@ -309,23 +322,24 @@
       <workItem from="1592942733549" duration="1555000" />
       <workItem from="1592977191177" duration="13335000" />
       <workItem from="1593243047629" duration="1246000" />
-      <workItem from="1593247641690" duration="5539000" />
+      <workItem from="1593247641690" duration="7742000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48364000" />
+    <option name="totallyTimeSpent" value="50567000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1928" y="-8" width="1936" height="1066" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13645943" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.13645943" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.28969958" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.28969958" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -333,11 +347,31 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.50429183" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.5092091" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13645943" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.28969958" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.5092091" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -469,13 +503,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/storage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="20" selection-start-line="20" selection-end-line="20" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/router/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
@@ -490,16 +517,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
           <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="45" column="25" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
-          <folding>
-            <element signature="e#23#48#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -529,6 +546,23 @@
             <element signature="e#2889#15097#0" />
             <element signature="e#15392#15946#0" />
             <element signature="e#15970#16746#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/storage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1007">
+          <caret line="53" column="30" lean-forward="true" selection-end-line="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="42" column="15" lean-forward="true" selection-start-line="35" selection-start-column="1" selection-end-line="42" selection-end-column="15" />
+          <folding>
+            <element signature="e#23#48#0" expanded="true" />
           </folding>
         </state>
       </provider>

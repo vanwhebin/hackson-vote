@@ -11,6 +11,12 @@
             <a-menu-item key="1" @click="$router.push({name: 'home'})">
               首页
             </a-menu-item>
+            <a-menu-item key="2" @click="$router.push({name: 'campaign'})">
+              活动
+            </a-menu-item>
+            <a-menu-item key="3" @click="$router.push({name: 'program'})">
+              项目
+            </a-menu-item>
           </a-menu>
         </div>
         <div class="right-menu">

@@ -2,7 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="382370cc-1e86-4108-88fa-4dc0d51aac77" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Program.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/application/api/controller/v1/Campaign.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/application/api/controller/v1/Campaign.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/application/common/model/Campaign.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/application/common/model/Campaign.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/dist/static/css/app.eca150d6bd409c6054ae1a96097a8db1.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/dist/static/css/app.eca150d6bd409c6054ae1a96097a8db1.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/dist/static/js/app.a26cd4ef2349fe64070a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/dist/static/js/app.a26cd4ef2349fe64070a.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/dist/static/js/manifest.2ae2e69a05c33dfc65f8.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/static/js/manifest.2ae2e69a05c33dfc65f8.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/api/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/api/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Campaign.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Campaign.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Start.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Start.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/utils/storage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/utils/storage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

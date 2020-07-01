@@ -6,6 +6,10 @@ export const postProgram = (data) => {
   return api.post(`${version}/program`, data)
 }
 
+export const getProgram = (parameter) => {
+  return api.get(`${version}/latest-program`, parameter)
+}
+
 export const postScore = (programID, data) => {
   return api.put(`${version}/program/${programID}`, data)
 }
@@ -13,8 +17,8 @@ export const postScore = (programID, data) => {
 export const getUsers = () => {
   return api.get(`${version}/user`)
 }
-export const getProgramList = (campaignID) => {
-  return api.get(`${version}/campaign/${campaignID}`)
+export const getProgramList = (campaignID, parameter) => {
+  return api.get(`${version}/program/${campaignID}`, parameter)
 }
 
 export const postCampaignVote = (campaignID) => {
