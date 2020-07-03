@@ -97,7 +97,7 @@ class Campaign extends BaseController
         (new CampaignValidate())->validate();
         $data = $request->param();
         $campaign = CampaignModel::findByUid($data['campaignUID']);
-        $checkRating = ProgramModel::checkRating($data['campaignUID']);
+        $checkRating = ProgramModel::checkRating($campaign->id);
         if ($checkRating) {
             $programRanking = [];
         } else {
