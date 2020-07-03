@@ -41,13 +41,16 @@ class GetCampaignRatingBehavior
             $rating = 0;
             foreach($rule as $username=>$weight) {
                 if (isset($program[$username]) && !empty($program[$username])) {
-                    $personalRating = round($program[$username] * $weight / 100, 2);
+                    $personalRating = $program[$username] * $weight;
                     $rating = $rating + $personalRating;
                 }
             }
             $updateRating[] = ['id' => $key, 'rating' => $rating];
         }
-
+        // $programModel->saveAll($updateRating);
+        // echo "<pre>";
+        // var_dump($updateRating);
+        // exit;
         return $programModel->saveAll($updateRating);
 
     }

@@ -179,7 +179,10 @@ class Program extends BaseModel
             ->visible(['title', 'rating'])
             ->order('rating', 'DESC')
             ->limit(0,8)
-            ->select();
+            ->select()->each(function($item) {
+                $item->rating = round($item->rating / 100, 2);
+                return $item;
+            });
     }
 
     /**

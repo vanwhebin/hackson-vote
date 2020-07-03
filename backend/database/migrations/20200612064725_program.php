@@ -36,7 +36,7 @@ class Program extends Migrator
             ->addColumn('memo', 'string', ['limit' => 300, 'default' => '', 'comment' => '备注（需求链接之类的）'])
             ->addColumn('campaign_id', 'integer', ['limit' => 3, 'signed' => false, 'comment' => '活动ID，对应表外键'])
             ->addColumn('user_id', 'integer', ['limit' => 3, 'signed' => false, 'comment' => '发起人ID，对应user表外键'])
-            ->addColumn('rating', 'float', ['limit' => 3, 'signed' => false, 'default' => 0, 'comment' => '最后评分'])
+            ->addColumn('rating', 'float', ['limit' => 5, 'signed' => false, 'default' => 0, 'comment' => '最后评分'])
             ->addColumn('team_id', 'integer', ['limit' => 5, 'signed' => false, 'null'=> true,'comment' => '所在队伍ID'])
             ->addColumn('order', 'integer', ['limit' => 5, 'signed' => false, 'default'=> 0,'comment' => '排序'])
             ->addColumn('create_time', 'integer', ['limit' => 11, 'signed' => false,'null'=> true,  'comment' => '创建时间'])
