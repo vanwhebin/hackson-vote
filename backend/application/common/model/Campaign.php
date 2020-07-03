@@ -99,11 +99,7 @@ class Campaign extends BaseModel
      */
     public function findLatest()
     {
-        // $time = time();
-        // ini_set('date.timezone', 'UTC');
-        // return [$time, time()];
-        return self::where( 'start_time', '<', time())->where('create_time', '<', time())
-            ->order('create_time', 'DESC')
+        return $this->order('create_time', 'DESC')
             ->field(['uuid', 'title', 'desc', 'start_time', 'end_time'])
             ->find();
     }

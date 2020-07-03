@@ -2,6 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="382370cc-1e86-4108-88fa-4dc0d51aac77" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/frontend/dist/static/js/app.02728bb8b02ecadae99a.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/dist/static/js/app.02728bb8b02ecadae99a.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/application/common/model/Campaign.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/application/common/model/Campaign.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/dist/static/css/app.8e2ba492bef8cab0ceaaf09859de5a8e.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/static/css/app.612c2ade98747397103fe46903ce88bb.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/dist/static/css/app.8e2ba492bef8cab0ceaaf09859de5a8e.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/static/css/app.612c2ade98747397103fe46903ce88bb.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/dist/static/js/app.9dff97fe5aba39090f96.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/dist/static/js/app.9dff97fe5aba39090f96.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/dist/static/js/manifest.2ae2e69a05c33dfc65f8.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/static/js/manifest.2ae2e69a05c33dfc65f8.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Campaign.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Campaign.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Program.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Program.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +63,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../yii2.0/rageframe2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Laravel/laravel-bjyblog" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -112,10 +124,14 @@
       <screen x="-1920" y="0" width="1920" height="1050" />
     </state>
     <state width="421" height="466" key="DebuggerActiveHint/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1592555876711" />
-    <state x="735" y="266" key="FileChooserDialogImpl" timestamp="1593141170029">
+    <state x="28" y="80" width="1736" height="866" key="DiffContextDialog" timestamp="1593744974596">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="-1185" y="266" key="FileChooserDialogImpl/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1592979238942" />
+    <state x="28" y="80" width="1736" height="866" key="DiffContextDialog/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1593744974596" />
+    <state x="-1185" y="266" key="FileChooserDialogImpl" timestamp="1593586127657">
+      <screen x="-1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="-1185" y="266" key="FileChooserDialogImpl/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1593586127657" />
     <state x="735" y="266" key="FileChooserDialogImpl/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1593141170029" />
     <state width="1877" height="169" key="GridCell.Tab.0.bottom" timestamp="1592794621171">
       <screen x="-1920" y="0" width="1920" height="1050" />

@@ -30,21 +30,22 @@
             <a-button type="dashed" style="width: 100%" icon="plus" @click="showDrawer()">添加</a-button>
           </div>
           <a-list
-            class="demo-loadmore-list"
             :loading="loading"
+            class="demo-loadmore-list"
             item-layout="horizontal"
             :data-source="data"
             :pagination="pagination"
           >
             <a-list-item slot="renderItem" slot-scope="item">
               <a slot="actions" @click="editCampaign(item)">编辑</a>
-              <a slot="actions" @click="confirmHide(item)">隐藏</a>
               <a-popconfirm
                 title="确认隐藏？"
                 ok-text="是"
                 cancel-text="否"
-                @confirm="confirmHide"
+                @confirm="confirmHide(item)"
+                slot="actions"
               >
+                <a>隐藏</a>
               </a-popconfirm>
               <a-list-item-meta
                 :description="item.desc"
@@ -56,6 +57,9 @@
               </a-list-item-meta>
             </a-list-item>
           </a-list>
+          <!--<div class="loading" v-show="loading">
+            <a-spin />
+          </div>-->
           <div>
             <a-modal
               :title="campaign.title"
@@ -116,7 +120,7 @@
                   <a-col :span="24">
                     <a-button type="primary" ghost @click="ratingWeight" v-show="editCurrentCampaign.status">调整评分权重</a-button>
                     <a-button :style="{ marginRight: '8px',marginLeft: '8px' }" @click="onClose">取消</a-button>
-                    <a-button type="primary" @click="onSubmit">提交</a-button>
+                    <a-button type="primary" @click="onSubmit" :loading="submitLoading">提交</a-button>
                     <a-drawer
                       title="评分人员权重"
                       width="420"
@@ -228,16 +232,17 @@ export default {
         pageSize: 10,
         pageNum: 1
       },
-      data: [
-      ]
+      data: [],
+      submitLoading: false
     }
   },
   mounted () {
     this.getData()
-    this.loading = false
   },
   methods: {
     showDrawer () {
+      this.form.resetFields()
+      this.campaign.title = '新增活动'
       this.visible = true
     },
     onClose () {
@@ -263,12 +268,14 @@ export default {
       this.getRaters(item.uuid)
     },
     getData () {
+      this.loading = true
       const _this = this
       const pagination = { pageSize: 10, pageNum: 1 }
       getCampaigns(pagination).then((res) => {
         _this.data = res.data.data
         _this.pagination.pageNum = parseInt(res.data.current_page)
         _this.pagination.pageSize = parseInt(res.data.per_page)
+        _this.loading = false
       })
     },
     getRaters (campaignID) {
@@ -342,6 +349,7 @@ export default {
         console.log(errors)
         console.log(fieldsValue)
         if (!errors) {
+          this.submitLoading = true
           const values = Object.assign({}, fieldsValue,
             { 'date': fieldsValue['date'].format('YYYY-MM-DD'),
               'start_time': fieldsValue['start_time'].format('HH:mm:ss'),
@@ -367,6 +375,7 @@ export default {
           this.$message.success('创建成功')
           this.getData()
         }
+        this.submitLoading = false
       })
     },
     updateCampaign (campaignUID, data) {
@@ -377,9 +386,11 @@ export default {
           this.visible = false
           this.getData()
         }
+        this.submitLoading = false
       })
     },
     confirmHide (item) {
+      this.loading = true
       hideCampaign(item.uuid).then(() => {
         this.getData()
       })

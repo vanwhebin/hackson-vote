@@ -90,6 +90,8 @@
   </a-layout>
 </template>
 <script>
+import { getStore, setStore } from '../utils/storage'
+import config from '@/config'
 import { getLatestCampaign, getProgramList } from '@/api/api'
 export default {
   name: 'Index',
@@ -127,18 +129,27 @@ export default {
   },
   mounted () {
     this.getData()
-    this.loading = false
   },
   methods: {
     getData () {
+      const campaignUID = getStore(config.campaignRef)
+      if (campaignUID) {
+        this.getPrograms(campaignUID)
+      } else {
+        getLatestCampaign().then((r) => {
+          if (!r.code) {
+            setStore(config.campaignRef, r.data.uuid)
+            this.getPrograms(r.data.uuid)
+          }
+        })
+      }
+    },
+    getPrograms (campaignUID) {
       const _this = this
       const pagination = { pageSize: 10, pageNum: 1 }
-      getLatestCampaign().then((r) => {
-        if (!r.code) {
-          getProgramList(r.data.uuid, pagination).then((res) => {
-            _this.data = res.data.programs
-          })
-        }
+      getProgramList(campaignUID, pagination).then((res) => {
+        _this.data = res.data.programs
+        _this.loading = false
       })
     }
   }
