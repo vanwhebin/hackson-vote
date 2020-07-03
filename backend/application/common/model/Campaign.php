@@ -69,10 +69,9 @@ class Campaign extends BaseModel
      */
     public static function getRaters($rule, $campaignID)
     {
-        $teamIDs = Program::where(['campaign_id' => $campaignID, 'status' => Program::ACTIVE])->column('team_id');
-        $teamRaters = array_column(array_values(Team::getTeamInfo($teamIDs)->toArray()), 'rating');
-
+        // $teamIDs = Program::where(['campaign_id' => $campaignID, 'status' => Program::ACTIVE])->column('team_id');
         if (!$rule) {
+            $teamRaters = array_column(array_values(Team::getTeamInfo($campaignID)->toArray()), 'rating');
             // 获取评委， 评委来自参赛队伍表
             $raters = array_map(function($item){
                 $item['weight'] = 0;

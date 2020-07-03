@@ -145,6 +145,10 @@ class Program extends BaseModel
             'campaign_id' => $campaign->id,
             'rating_user_id' => $user->id,
         ];
+        if (!$campaign->rule) {
+            // 生成默认的评分规则
+            $campaign = Hook::exec('app\\api\\behavior\\DefaultRatingWeightBehavior', $campaign);
+        }
         $raters = array_keys(json_decode($campaign->rule, true));
         $rating = new ProgramRating();
         if (!in_array($user->name, $raters)) {

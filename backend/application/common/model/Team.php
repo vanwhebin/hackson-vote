@@ -57,17 +57,17 @@ class Team extends BaseModel
 
     /**
      * 获取团队内评委人员信息
-     * @param $teamIDs
+     * @param $campaignID
      * @return array|PDOStatement|string|Collection
      * @throws DataNotFoundException
      * @throws ModelNotFoundException
      * @throws DbException
      */
-    public static function getTeamInfo($teamIDs)
+    public static function getTeamInfo($campaignID)
     {
        return self::with(['rating' => function($query){
             $query->field(['name', 'id']);
-        }])->where(['id' => $teamIDs])
+        }])->where(['campaign_id' => $campaignID])
            ->field(['id', 'rating'])
            ->visible(['rating'])
            ->select();
