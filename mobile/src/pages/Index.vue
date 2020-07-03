@@ -38,13 +38,13 @@ export default {
             formatTime: '',
             start: {
                 time: null,
-                status: false
+                status: true
             }
         }
     },
     mounted () {
         this.getCampaign()
-        this.checkTime()
+        // this.checkTime()
     },
     methods: {
         startGame (e) {

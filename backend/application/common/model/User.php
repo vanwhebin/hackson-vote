@@ -37,7 +37,7 @@ class User extends BaseModel
         if (!$user) {
             return false;
         } else {
-            return $email === $password ? $user : false;
+            return '123456' === $password ? $user : false;
         }
     }
 }

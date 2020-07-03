@@ -49,7 +49,7 @@
 </template>
 
 <script>
-    import { getProgramList, postCampaignVote } from '@/api/api'
+    import { getProgramList, postCampaignVote, getCampaignInfo } from '@/api/api'
     import Score from '@/components/Score'
     import config from '@/config'
     import { getStore } from '@/utils/storage'
@@ -129,7 +129,19 @@
                 })
             },
             init () {
+                const _this = this
                 const campaignUID = getStore(config.campaignRef)
+                if (campaignUID) {
+                    this.getProgramList(campaignUID)
+                } else {
+                    getCampaignInfo().then((res) => {
+                        console.log(res)
+                        setStore(config.campaignRef, res.data.uuid)
+                        _this.getProgramList(res.data.uuid)
+                    })
+                }
+            },
+            getProgramList (campaignUID) {
                 getProgramList(campaignUID).then((res) => {
                     console.log(res)
                     this.submitted = Boolean(res.data.status)
@@ -153,6 +165,7 @@
                 this.init()
             },
             selectScore (val) {
+                console.log('list', val)
                 this.selected.self_rating = val
             }
         },

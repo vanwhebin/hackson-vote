@@ -75,6 +75,8 @@ export default {
 	},
 	computed: {
 		score () {
+			console.log(this.selected.self_rating)
+			console.log(this.selectScore)
 			return this.selected.self_rating ? this.selected.self_rating : this.selectScore
 		}
 	},
@@ -90,9 +92,11 @@ export default {
 	methods: {
 		evaluate (val) {
 			this.selectScore = val
+			console.log(val)
 			this.$emit('selectScore', val)
 		},
 		back () {
+			this.$emit('selectScore', 1)
 			this.$emit('showDetail', false)
 		},
 		pop (success, text='') {
