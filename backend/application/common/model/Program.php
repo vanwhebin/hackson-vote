@@ -205,7 +205,7 @@ class Program extends BaseModel
                 'memo' => !empty($data['memo'])? trim($data['memo']) : '',
             ]);
             $team = Team::createOne(array_merge($data, ['campaign_id' => intval($campaign->id)]));
-            $program->uuid = createUID($campaign->id, config('secure.program_salt'));
+            $program->uuid = createUID($program->id, config('secure.program_salt'));
             $program->team_id = $team->id;
             $program->save();
         } catch(DbException | Exception $exception){

@@ -19,6 +19,15 @@ use think\response\Json;
 class Program extends BaseController
 {
 
+    /**
+     * 创建项目
+     * @param Request $request
+     * @return Json
+     * @throws DataNotFoundException
+     * @throws DbException
+     * @throws InvalidParamException
+     * @throws ModelNotFoundException
+     */
     public function create(Request $request)
     {
         // 创建一个新活动
@@ -50,9 +59,7 @@ class Program extends BaseController
         $user = $request->user;
         $campaign = CampaignModel::findByUid($data['campaignUID']);
         $program = ProgramModel::findByUid($data['programUID']);
-
         $res = ProgramModel::updateRating($campaign, $program, $user, $data['score']);
-        return json($res);
         if ($res) {
             return resJson();
         } else {

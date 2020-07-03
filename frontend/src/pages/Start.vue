@@ -220,9 +220,9 @@ export default {
     },
     onSubmit () {
       const _this = this
-      this.submitLoading = true
       this.form.validateFields((err, values) => {
         if (!err) {
+          this.submitLoading = true
           console.log(values)
           const data = Object.assign({}, values, { campaignUID: _this.campaign.UID, develop: values['develop'].join(',') })
           postProgram(data).then((res) => {
@@ -231,6 +231,12 @@ export default {
             if (!res.code) {
               _this.$message.success('创建成功')
               _this.form.resetFields()
+              _this.selectedUsers = {
+                product: {},
+                develop: {},
+                test: {},
+                rating: {}
+              }
             }
           })
         }

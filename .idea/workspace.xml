@@ -3,16 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="382370cc-1e86-4108-88fa-4dc0d51aac77" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/application/api/behavior/GetCampaignRatingBehavior.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/application/api/behavior/GetCampaignRatingBehavior.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/application/api/controller/v1/Campaign.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/application/api/controller/v1/Campaign.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/application/api/controller/v1/Program.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/application/api/controller/v1/Program.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/application/common/model/Program.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/application/common/model/Program.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/application/common/model/ProgramRating.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/application/common/model/ProgramRating.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/database/migrations/20200612064725_program.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/migrations/20200612064725_program.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/dist/static/css/app.b7a1c6bcd9c5030a4e292e4630322d78.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/dist/static/css/app.b7a1c6bcd9c5030a4e292e4630322d78.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/dist/static/js/app.eafdbb38f31d8a8450bb.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/dist/static/js/app.eafdbb38f31d8a8450bb.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/dist/static/js/manifest.2ae2e69a05c33dfc65f8.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/static/js/manifest.2ae2e69a05c33dfc65f8.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Start.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Start.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/src/components/Loading.vue" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/src/components/Loading.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/src/components/Score.vue" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/src/components/Score.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/src/pages/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/src/pages/List.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

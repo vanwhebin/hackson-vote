@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e53033d3-4ad3-4192-ab08-170de542dd0e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/application/api/controller/v1/Program.php" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/application/api/controller/v1/Program.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/application/common/model/Program.php" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/application/common/model/Program.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Loading.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Loading.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Score.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Score.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/List.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/pages/Start.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/pages/Start.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -313,15 +307,16 @@
       <workItem from="1592977191177" duration="13335000" />
       <workItem from="1593243047629" duration="1246000" />
       <workItem from="1593247641690" duration="9426000" />
-      <workItem from="1593746403556" duration="5248000" />
+      <workItem from="1593746403556" duration="5868000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57499000" />
+    <option name="totallyTimeSpent" value="58119000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1066" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13645943" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
