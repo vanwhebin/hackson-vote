@@ -162,7 +162,9 @@
                 this.init()
             },
             selectScore (val) {
+                console.log(this.selected)
                 this.selected.self_rating = val
+                this.selected = Object.assign({test: (new Date()).getTime()}, this.selected)
             }
         },
         mounted () {

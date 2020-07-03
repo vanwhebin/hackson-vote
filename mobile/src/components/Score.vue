@@ -57,6 +57,7 @@ export default {
 	},
 	data () {
 		return {
+			// score: 1,
 			selectScore: 1,
 			toast: {
 				img: '',
@@ -75,8 +76,19 @@ export default {
 	},
 	computed: {
 		score () {
+			console.log(this.selected.self_rating)
 			return this.selected.self_rating ? this.selected.self_rating : this.selectScore
 		}
+	},
+	watch: {
+		// selected: {
+		// 	handler (newVal, oldVal) {
+		// 		console.log(newVal)
+		// 		console.log(oldVal)
+		// 		this.score = this.selected.self_rating ? this.selected.self_rating : this.score
+		// 	},
+		// 	deep: true
+		// }
 	},
 	filters: {
 		cut (val) {
@@ -90,6 +102,8 @@ export default {
 	methods: {
 		evaluate (val) {
 			this.selectScore = val
+			console.log(val)
+			// this.selected.self_rating = val
 			this.$emit('selectScore', val)
 		},
 		back () {

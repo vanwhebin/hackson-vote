@@ -11,7 +11,7 @@
           </div>
           <div id="password">
             <label>
-            <input  name="password" type="password" placeholder="密码即邮箱" v-model="form.password">
+            <input  name="password" type="password" placeholder="123456" v-model="form.password">
           </label>
           </div>
           <div>
