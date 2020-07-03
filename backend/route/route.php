@@ -13,7 +13,7 @@ Route::group('api', function () {
 
         Route::get('campaign/list', 'api/v1.Campaign/collections');
         Route::get('campaign/latest', 'api/v1.Campaign/latest');
-        // Route::get('campaign/:campaignUID/result', 'api/v1.Campaign/top');
+        Route::get('campaign/:campaignUID/result', 'api/v1.Campaign/top');
         Route::put('campaign/:campaignUID/vote', 'api/v1.Campaign/batchSubmit');
         Route::get('campaign/:campaignUID/rater', 'api/v1.Campaign/rater');
         Route::get('campaign/:campaignUID', 'api/v1.Campaign/index');

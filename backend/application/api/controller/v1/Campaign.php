@@ -74,10 +74,9 @@ class Campaign extends BaseController
         $data = $request->param();
         $user = $request->user;
         $campaign = CampaignModel::findByUid($data['campaignUID']);
-        // $allDone = ProgramRatingModel::checkRecord($campaign);
-        // return json($allDone);
         ProgramRatingModel::disableStatus($campaign, $user);
         $allDone = ProgramRatingModel::checkRecord($campaign);
+        // return $allDone;
         if (!$allDone) {
             Hook::exec('app\\api\\behavior\\GetCampaignRatingBehavior', $campaign->toArray());
         }
@@ -98,7 +97,7 @@ class Campaign extends BaseController
         (new CampaignValidate())->validate();
         $data = $request->param();
         $campaign = CampaignModel::findByUid($data['campaignUID']);
-        $checkRating = ProgramModel::checkRating();
+        $checkRating = ProgramModel::checkRating($data['campaignUID']);
         if ($checkRating) {
             $programRanking = [];
         } else {

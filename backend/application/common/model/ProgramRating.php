@@ -64,9 +64,9 @@ class ProgramRating extends BaseModel
         $raters = array_keys(json_decode($campaign->rule, true));
         $ratedUsers = self::with(['user' => function($query) {
             $query->field(['id', 'name']);
-        }])->where(['campaign_id'=> $campaign->id, 'status' => self::ENABLED])
+        }])->where(['campaign_id'=> $campaign->id, 'status' => self::DISABLED])
             ->where('score', '<>', self::DEFAULT_SCORE)
-            ->field(['rating_user_id', 'campaign_id'])
+            ->field(['rating_user_id', 'status'])
             ->visible(['user'])
             ->select()
             ->toArray();
@@ -74,6 +74,7 @@ class ProgramRating extends BaseModel
             $item = $item['user']['name'];
             return $item;
         },$ratedUsers);
+        // 存不存在
         return array_diff($raters, $ratedUsers);
     }
 

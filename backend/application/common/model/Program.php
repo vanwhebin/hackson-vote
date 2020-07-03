@@ -179,11 +179,7 @@ class Program extends BaseModel
             ->visible(['title', 'rating'])
             ->order('rating', 'DESC')
             ->limit(0,8)
-            ->select()->each(function($item){
-            $item->rating = $item->rating / 100;
-            return $item;
-        });
-
+            ->select();
     }
 
     /**
@@ -219,14 +215,19 @@ class Program extends BaseModel
 
     /**
      * 查找是否有未完成计算的评分项目
+     * @param $campaignID
      * @return array|PDOStatement|string|Model|null
      * @throws DataNotFoundException
      * @throws DbException
      * @throws ModelNotFoundException
      */
-    public static function checkRating()
+    public static function checkRating($campaignID)
     {
-        return self::where(['rating' => self::DEFAULT_RATING, 'status' => self::ACTIVE])->find();
+        return self::where([
+            'rating' => self::DEFAULT_RATING,
+            'status' => self::ACTIVE,
+            'campaign_id' => $campaignID
+        ])->find();
     }
 
 
