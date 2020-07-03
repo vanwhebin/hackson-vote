@@ -12,7 +12,6 @@ use think\db\exception\DataNotFoundException;
 use think\db\exception\ModelNotFoundException;
 use think\Exception;
 use think\exception\DbException;
-use think\facade\Hook;
 use think\Request;
 use think\response\Json;
 use think\response\Redirect;
@@ -67,7 +66,6 @@ class Auth extends BaseController
     {
         (new LoginFormValidate())->validate();
         $data = $request->param();
-        // return json($data);
         $user = \app\common\model\User::getEmailUser($data['email'], $data['password']);
         if ($user) {
             // return json($user);

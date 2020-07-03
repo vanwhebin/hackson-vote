@@ -35,10 +35,9 @@ class User
 
         $wxUserID = $wxUser->getUserID($params['code']);
         // $wxUserID = 'qy01c1d4571e4a9d0028630fde21';
-        $user = UserModel::getUserByUserID($wxUserID);
         // 查看用户是否存在，不存在就创建对应的用户
 
-        return $user;
+        return UserModel::getUserByUserID($wxUserID);
     }
 
 }

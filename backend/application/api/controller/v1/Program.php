@@ -8,10 +8,11 @@ use app\api\validate\CreateProgramValidate;
 use app\api\validate\ProgramValidate;
 use app\common\controller\BaseController;
 use app\common\exception\InvalidParamException;
-use app\common\facade\CampaignFacade as CampaignModel;
-use app\common\facade\ProgramFacade as ProgramModel;
-use app\lib\token\Token;
-use think\facade\Hook;
+use app\common\model\Campaign as CampaignModel;
+use app\common\model\Program as ProgramModel;
+use think\db\exception\DataNotFoundException;
+use think\db\exception\ModelNotFoundException;
+use think\exception\DbException;
 use think\Request;
 use think\response\Json;
 
@@ -38,6 +39,9 @@ class Program extends BaseController
      * @param Request $request
      * @return Json
      * @throws InvalidParamException
+     * @throws DataNotFoundException
+     * @throws ModelNotFoundException
+     * @throws DbException
      */
     public function rating(Request $request)
     {
@@ -55,6 +59,14 @@ class Program extends BaseController
         }
     }
 
+    /**
+     * @param Request $request
+     * @return Json
+     * @throws DataNotFoundException
+     * @throws DbException
+     * @throws InvalidParamException
+     * @throws ModelNotFoundException
+     */
     public function collection(Request $request)
     {
         (new CampaignValidate())->validate();

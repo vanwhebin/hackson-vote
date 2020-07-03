@@ -28,12 +28,4 @@ class User extends BaseController
     }
 
 
-    public function token()
-    {
-        $token = Token::getToken();
-        return resJson($token);
-    }
-
-
-
 }

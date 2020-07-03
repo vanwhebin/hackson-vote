@@ -7,10 +7,15 @@ use app\api\validate\CampaignValidate;
 use app\api\validate\CreateCampaignValidate;
 use app\common\controller\BaseController;
 use app\common\exception\InvalidParamException;
-use app\common\facade\ProgramFacade as ProgramModel;
-use app\common\facade\CampaignFacade as CampaignModel;
-use app\common\facade\ProgramRatingFacade as ProgramRatingModel;
+use app\common\model\Program as ProgramModel;
+use app\common\model\Campaign as CampaignModel;
+use app\common\model\ProgramRating as ProgramRatingModel;
 use app\common\validate\PaginationValidate;
+use think\db\exception\DataNotFoundException;
+use think\db\exception\ModelNotFoundException;
+use think\Exception;
+use think\exception\DbException;
+use think\exception\PDOException;
 use think\facade\Hook;
 use think\Request;
 use think\response\Json;
@@ -22,6 +27,7 @@ class Campaign extends BaseController
      * @param Request $request
      * @return Json
      * @throws InvalidParamException
+     * @throws DbException
      */
     public function collections(Request $request)
     {
@@ -36,7 +42,10 @@ class Campaign extends BaseController
      * 当前活动的细节
      * @param Request $request
      * @return Json
+     * @throws DbException
      * @throws InvalidParamException
+     * @throws DataNotFoundException
+     * @throws ModelNotFoundException
      */
     public function index(Request $request)
     {
@@ -50,7 +59,12 @@ class Campaign extends BaseController
      * 用戶全部完成提交,不再修改
      * @param Request $request
      * @return Json
+     * @throws DataNotFoundException
+     * @throws DbException
      * @throws InvalidParamException
+     * @throws ModelNotFoundException
+     * @throws Exception
+     * @throws PDOException
      */
     public function batchSubmit(Request $request)
     {
@@ -72,7 +86,10 @@ class Campaign extends BaseController
      * 获取排行结果
      * @param Request $request
      * @return Json
+     * @throws DataNotFoundException
+     * @throws DbException
      * @throws InvalidParamException
+     * @throws ModelNotFoundException
      */
     public function top(Request $request)
     {
@@ -92,13 +109,17 @@ class Campaign extends BaseController
      * 获取评分人员
      * @param Request $request
      * @return Json
+     * @throws DataNotFoundException
+     * @throws DbException
      * @throws InvalidParamException
+     * @throws ModelNotFoundException
      */
     public function rater(Request $request)
     {
         (new CampaignValidate())->validate();
         $data = $request->param();
         $campaign = CampaignModel::findByUid($data['campaignUID']);
+        // return resJson($campaign);
         $raters = $campaign->getRaters($campaign->rule, $campaign->id);
         return resJson($raters);
     }
@@ -108,11 +129,13 @@ class Campaign extends BaseController
      * 查找当前最新的的活动信息
      * @param Request $request
      * @return Json
+     * @throws DataNotFoundException
+     * @throws DbException
+     * @throws ModelNotFoundException
      */
     public function latest(Request $request)
     {
         $campaign = CampaignModel::findLatest();
-        // return resJson([$campaign, time()]);
         if ($campaign) {
             return resJson($campaign);
         } else {
@@ -125,7 +148,10 @@ class Campaign extends BaseController
      * 更新评分规则
      * @param Request $request
      * @return Json
+     * @throws DataNotFoundException
+     * @throws DbException
      * @throws InvalidParamException
+     * @throws ModelNotFoundException
      */
     public function rule(Request $request)
     {
@@ -166,7 +192,10 @@ class Campaign extends BaseController
      * 更新活动信息
      * @param Request $request
      * @return Json
+     * @throws DataNotFoundException
+     * @throws DbException
      * @throws InvalidParamException
+     * @throws ModelNotFoundException
      */
     public function update(Request $request)
     {
@@ -188,7 +217,10 @@ class Campaign extends BaseController
      * 刪除活動
      * @param Request $request
      * @return Json
+     * @throws DataNotFoundException
+     * @throws DbException
      * @throws InvalidParamException
+     * @throws ModelNotFoundException
      */
     public function delete(Request $request)
     {

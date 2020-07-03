@@ -92,7 +92,7 @@ class Program extends BaseModel
      * @throws DbException
      * @throws ModelNotFoundException
      */
-    public function getRatingProgram($campaignID, $userID)
+    public static function getRatingProgram($campaignID, $userID)
     {
         $programs = self::getAllPrograms($campaignID)->toArray();
         $programsRatings = self::getRating($campaignID, $userID)->toArray();
@@ -121,9 +121,9 @@ class Program extends BaseModel
      * @throws DbException
      * @throws ModelNotFoundException
      */
-    public function findByUid($programUID)
+    public static function findByUid($programUID)
     {
-        return $this->where(['uuid' => $programUID, 'status' => self::ACTIVE])->findOrFail();
+        return self::where(['uuid' => $programUID, 'status' => self::ACTIVE])->findOrFail();
     }
 
 
@@ -179,10 +179,10 @@ class Program extends BaseModel
      * @throws DbException
      * @throws ModelNotFoundException
      */
-    public function getRankedResults($campaignID)
+    public static function getRankedResults($campaignID)
     {
         // 获取所有项目的排名结果
-        $ranks = $this->where(['status' => self::ACTIVE, 'campaign_id' => $campaignID])
+        return self::where(['status' => self::ACTIVE, 'campaign_id' => $campaignID])
             ->field(['id', 'title', 'campaign_id', 'rating'])
             ->visible(['title', 'rating'])
             ->order('rating', 'DESC')
@@ -191,7 +191,6 @@ class Program extends BaseModel
             $item->rating = $item->rating / 100;
             return $item;
         });
-        return $ranks;
 
     }
 
@@ -202,7 +201,7 @@ class Program extends BaseModel
      * @param $user
      * @return Program|bool
      */
-    public function createOne($campaign, $data, $user)
+    public static function createOne($campaign, $data, $user)
     {
         Db::startTrans();
         try{
@@ -233,9 +232,9 @@ class Program extends BaseModel
      * @throws DbException
      * @throws ModelNotFoundException
      */
-    public function checkRating()
+    public static function checkRating()
     {
-        return $this->where(['rating' => self::DEFAULT_RATING, 'status' => self::ACTIVE])->find();
+        return self::where(['rating' => self::DEFAULT_RATING, 'status' => self::ACTIVE])->find();
     }
 
 

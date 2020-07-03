@@ -41,9 +41,9 @@ class Campaign extends BaseModel
      * @throws DbException
      * @throws ModelNotFoundException
      */
-    public function findByUid($campaignID)
+    public static function findByUid($campaignID)
     {
-        return $this->where(['uuid' => $campaignID])->findOrFail();
+        return self::where(['uuid' => $campaignID])->findOrFail();
     }
 
     /**
@@ -53,39 +53,56 @@ class Campaign extends BaseModel
      * @return Paginator
      * @throws DbException
      */
-    public function getList($pageSize=10, $pageNum=1)
+    public static function getList($pageSize=10, $pageNum=1)
     {
-        return $this->order('id', 'DESC')->paginate($pageSize, false, ['page' => $pageNum]);
+        return self::order('id', 'DESC')->paginate($pageSize, false, ['page' => $pageNum]);
     }
 
-
-
-    public function getRaters($rule, $campaignID)
+    /**
+     * 获取当前活动的评分人员数据
+     * @param $rule
+     * @param $campaignID
+     * @return array
+     * @throws DataNotFoundException
+     * @throws DbException
+     * @throws ModelNotFoundException
+     */
+    public static function getRaters($rule, $campaignID)
     {
-        // return $rule;
         $teamIDs = Program::where(['campaign_id' => $campaignID, 'status' => Program::ACTIVE])->column('team_id');
         $teamRaters = array_column(array_values(Team::getTeamInfo($teamIDs)->toArray()), 'rating');
-        // return $teamRaters;
-        // if (!$rule->content) { // 将外键方式修改为当前表方式
+
         if (!$rule) {
             // 获取评委， 评委来自参赛队伍表
             $raters = array_map(function($item){
                 $item['weight'] = 0;
                 return $item;
             },$teamRaters);
+
         } else {
             $existedRaters = json_decode($rule, true);
-            $existedRaterIDs = array_keys($existedRaters);
-            $raters = array_map(function($item) use ($existedRaterIDs, $existedRaters) {
-                foreach ($existedRaterIDs as $r) {
-                    if ($r == $item['name']) {
-                        $item['weight'] = $existedRaters[$r];
-                    } else {
-                        $item['weight'] = 0;
-                    }
-                }
-                return $item;
-            },$teamRaters);
+            $raters = [];
+            foreach($existedRaters as $key=> $value) {
+                $raters[] = [
+                    'name' => $key,
+                    'weight' => $value
+                ];
+            }
+            // $raters = array_map(function(&$item){
+            //
+            // }, $existedRaters);
+            // $existedRaterIDs = array_keys($existedRaters);
+            // return [$teamRaters,$existedRaterIDs, $existedRaters];
+            // $raters = array_map(function($item) use ($existedRaterIDs, $existedRaters) {
+            //     foreach ($existedRaterIDs as $r) {
+            //         if ($r == $item['name']) {
+            //             $item['weight'] = $existedRaters[$r];
+            //         } else {
+            //             $item['weight'] = 0;
+            //         }
+            //     }
+            //     return $item;
+            // },$teamRaters);
         }
         return $raters;
     }
@@ -97,14 +114,14 @@ class Campaign extends BaseModel
      * @throws DbException
      * @throws ModelNotFoundException
      */
-    public function findLatest()
+    public static function findLatest()
     {
-        return $this->order('create_time', 'DESC')
+        return self::order('create_time', 'DESC')
             ->field(['uuid', 'title', 'desc', 'start_time', 'end_time'])
             ->find();
     }
 
-    public function createOne($data)
+    public static function createOne($data)
     {
         // 创建活动
         $startTime = strtotime($data['date']. ' ' .$data['start_time']);
@@ -121,7 +138,7 @@ class Campaign extends BaseModel
      * @param $campaign
      * @return mixed
      */
-    public function updateUID($campaign)
+    public static function updateUID($campaign)
     {
         $uuid = createUID($campaign->id, config('secure.campaign_salt'));
         $campaign->uuid = $uuid;
@@ -134,7 +151,7 @@ class Campaign extends BaseModel
      * @param $data
      * @return mixed
      */
-    public function updateInfo($campaign, $data)
+    public static function updateInfo($campaign, $data)
     {
         // 更新活動信息
         $campaign->title = trim($data['title']);

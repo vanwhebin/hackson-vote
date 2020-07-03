@@ -57,9 +57,9 @@ class ProgramRating extends BaseModel
      * @throws ModelNotFoundException
      * @throws DbException
      */
-    public function checkRecord($campaignID)
+    public static function checkRecord($campaignID)
     {
-        return  $this->where([
+        return  self::where([
             'campaign_id'=> $campaignID,
             'score' => self::DEFAULT_SCORE,
             'status' => self::ENABLED
@@ -67,14 +67,14 @@ class ProgramRating extends BaseModel
     }
 
 
-    public function checkProgramRecord($campaignID, $programID)
+    public static function checkProgramRecord($campaignID, $programID)
     {
         $where = [
             'campaign_id'=> $campaignID,
             'program_id' => $programID,
             'score' => self::DEFAULT_SCORE
         ];
-        return  $this->where($where)->find();
+        return  self::where($where)->find();
     }
 
 
@@ -86,9 +86,9 @@ class ProgramRating extends BaseModel
      * @throws Exception
      * @throws PDOException
      */
-    public function disableStatus($campaign, $user)
+    public static function disableStatus($campaign, $user)
     {
-        return $this->where(['campaign_id' => $campaign->id, 'rating_user_id' => $user->id])
+        return self::where(['campaign_id' => $campaign->id, 'rating_user_id' => $user->id])
             ->update(['status' => self::DISABLED]);
     }
 
@@ -99,7 +99,7 @@ class ProgramRating extends BaseModel
      * @throws DbException
      * @throws ModelNotFoundException
      */
-    public function getRating($campaignID)
+    public static function getRating($campaignID)
     {
         // 获取对应的活动下已经全部打分的评分结果
         // 返回 [{user: {id: 11, name: 'zhang san'}, rating: 10 }]
