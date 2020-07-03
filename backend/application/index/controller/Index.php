@@ -55,6 +55,18 @@ class Index
 
     public function uuid()
     {
+
+
+
+        echo "<pre>";
+        for ($i = 1;$i<= 12; $i++) {
+            $model = Program::where(['id' => $i])->find();
+            $model->uuid = createUID($i, config('secure.program_salt'));
+            $model->save();
+            // var_dump(createUID($i, config('secure.program_salt')));
+        }
+        exit;
+
         $userInfo = User::find(57)->toArray();
         var_dump($userInfo);
         exit;

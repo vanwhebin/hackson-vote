@@ -33,7 +33,6 @@ class Program extends BaseController
         // 创建一个新活动
         (new CreateProgramValidate())->validate();
     	$data = $request->param();
-    	$user = $request->user;
         $campaign = CampaignModel::findByUid($data['campaignUID']);
     	if (ProgramModel::createOne($campaign, $data, $request->user)){
     	    return resJson();
