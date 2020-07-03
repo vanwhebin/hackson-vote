@@ -52,7 +52,7 @@
     import { getProgramList, postCampaignVote, getCampaignInfo } from '@/api/api'
     import Score from '@/components/Score'
     import config from '@/config'
-    import { getStore } from '@/utils/storage'
+    import { getStore, setStore } from '@/utils/storage'
     import Loading from '@/components/Loading'
 
     export default {

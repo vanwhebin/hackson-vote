@@ -28,9 +28,15 @@
 			  if (!this.start) this.start = timestamp;
 			  let progress = timestamp - this.start;
 			  this.progress = Math.min(progress / 10, 100) + '%'
-				if (progress < 10000) {
-			    window.requestAnimationFrame(this.step);
-			  }
+				console.log(this.progress)
+				// if (this.progress !== '100%') {
+				// 	console.log(progress)
+					if (progress < 10000) {
+						window.requestAnimationFrame(this.step);
+				// } else {
+				// 	return false
+				}
+			  // }
 			}
 		}
 	}
