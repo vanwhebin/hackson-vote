@@ -143,15 +143,12 @@
             },
             getProgramList (campaignUID) {
                 getProgramList(campaignUID).then((res) => {
-                    console.log(res)
                     this.submitted = Boolean(res.data.status)
                     this.programs = res.data.programs
                     this.loading = false
                 })
             },
             commit (item) {
-                console.log(item)
-                console.log(item.rating_status)
                 if (item.rating_status) {
                     this.pop(false, '无法修改')
                     return false
@@ -165,7 +162,6 @@
                 this.init()
             },
             selectScore (val) {
-                console.log('list', val)
                 this.selected.self_rating = val
             }
         },

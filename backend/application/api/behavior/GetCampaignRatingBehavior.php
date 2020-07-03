@@ -3,13 +3,23 @@
 
 namespace app\api\behavior;
 
-use app\common\facade\ProgramRatingFacade;
-use app\common\model\Campaign;
-use app\common\model\CampaignRatingRule;
 use app\common\model\Program;
+use app\common\model\ProgramRating;
+use think\Collection;
+use think\db\exception\DataNotFoundException;
+use think\db\exception\ModelNotFoundException;
+use think\exception\DbException;
 
 class GetCampaignRatingBehavior
 {
+    /**
+     * 生成活动评分记录
+     * @param array $campaign
+     * @return Collection
+     * @throws DataNotFoundException
+     * @throws ModelNotFoundException
+     * @throws DbException
+     */
     public function run(array $campaign)
     {
         // 按照对应campaign下绑定的规则
@@ -19,7 +29,7 @@ class GetCampaignRatingBehavior
         $programModel = new Program();
         $formatedPrograms = [];
         $updateRating = [];
-        $ratings = ProgramRatingFacade::getRating($campaign['id']);
+        $ratings = ProgramRating::getRating($campaign['id']);
         array_map(function($item) use (&$formatedPrograms) {
             if (!empty($item['program'])) {
                 $formatedPrograms[$item['program']['id']][$item['user']['name']] = $item['score'];

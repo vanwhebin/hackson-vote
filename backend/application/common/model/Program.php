@@ -145,10 +145,9 @@ class Program extends BaseModel
             'campaign_id' => $campaign->id,
             'rating_user_id' => $user->id,
         ];
-        $team = new Team();
+        $raters = array_keys(json_decode($campaign->rule, true));
         $rating = new ProgramRating();
-        $raters = $team->where(['campaign_id' => $campaign->id])->column('rating');
-        if (!in_array($user->id, $raters)) {
+        if (!in_array($user->name, $raters)) {
             logger('评分失败,非评委', json_encode([$raters, $user]), __CLASS__. "##". __METHOD__);
             return false;
         } else {
@@ -162,13 +161,6 @@ class Program extends BaseModel
             return $ratingRecord->save();
         }
         // TODO 当有多维度
-        // if (is_string($score)) {
-        //     $rating->rating_str = $score;
-        //     $ratingResult = json_decode($score, true);
-        //     foreach ($ratingResult as $val) {
-        //
-        //     }
-        // }
     }
 
 

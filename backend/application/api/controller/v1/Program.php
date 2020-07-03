@@ -50,7 +50,9 @@ class Program extends BaseController
         $user = $request->user;
         $campaign = CampaignModel::findByUid($data['campaignUID']);
         $program = ProgramModel::findByUid($data['programUID']);
+
         $res = ProgramModel::updateRating($campaign, $program, $user, $data['score']);
+        return json($res);
         if ($res) {
             return resJson();
         } else {

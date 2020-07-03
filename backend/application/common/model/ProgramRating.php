@@ -51,19 +51,30 @@ class ProgramRating extends BaseModel
 
     /**
      * 檢查是否还有未评分的项目
-     * @param $campaignID
+     * @param $campaign
      * @return array|PDOStatement|string|Model|null
      * @throws DataNotFoundException
      * @throws ModelNotFoundException
      * @throws DbException
      */
-    public static function checkRecord($campaignID)
+    public static function checkRecord($campaign)
     {
-        return  self::where([
-            'campaign_id'=> $campaignID,
-            'score' => self::DEFAULT_SCORE,
-            'status' => self::ENABLED
-        ])->find();
+        // 评委  记录存在
+        // 评委评分记录
+        $raters = array_keys(json_decode($campaign->rule, true));
+        $ratedUsers = self::with(['user' => function($query) {
+            $query->field(['id', 'name']);
+        }])->where(['campaign_id'=> $campaign->id, 'status' => self::ENABLED])
+            ->where('score', '<>', self::DEFAULT_SCORE)
+            ->field(['rating_user_id', 'campaign_id'])
+            ->visible(['user'])
+            ->select()
+            ->toArray();
+        $ratedUsers = array_map(function($item){
+            $item = $item['user']['name'];
+            return $item;
+        },$ratedUsers);
+        return array_diff($raters, $ratedUsers);
     }
 
 
