@@ -18,7 +18,7 @@ class CampaignValidate extends BaseValidate
 
     public function sceneUpdate()
     {
-        $this->append('desc', 'require|isNotEmpty');
+        // $this->append('desc', 'require|isNotEmpty');
         $this->append('date', 'require|isNotEmpty');
         $this->append('start_time', 'require|isNotEmpty');
         $this->append('end_time', 'require|isNotEmpty');

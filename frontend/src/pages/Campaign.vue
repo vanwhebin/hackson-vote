@@ -130,7 +130,7 @@
                       <a-form :form="rateForm" layout="horizontal">
                         <a-form-item v-for="(item, key) in raters" :key="key" :label="item.name" :label-col="{span:4}" :wrapper-col="{span:14}">
                           <a-input-number
-                            v-decorator="[item.name]"
+                            v-decorator="[item.name, {initialValue: item.weight}]"
                             :min="0"
                             :max="100"
                             :formatter="value => `${value}%`"
@@ -240,6 +240,14 @@ export default {
     this.getData()
   },
   methods: {
+    formatPercent (value, type = null) {
+      console.log(value)
+      if (type) {
+        return `${value}%`
+      } else {
+        // return parseInt(value.toString().replace('%', ''))
+      }
+    },
     showDrawer () {
       this.form.resetFields()
       this.campaign.title = '新增活动'
