@@ -7,7 +7,7 @@ export function timeStampFormat (ts, type=null) {
     hour = hour > 10 ? hour : '0' + hour.toString()
     min = min > 10 ? min : '0' + min.toString()
     sec = sec > 10 ? sec : '0' + sec.toString()
-    const date = dateObject.getFullYear() + '-' + (dateObject.getMonth() + 1) + '-' + dateObject.getDay()
+    const date = dateObject.getFullYear() + '-' + (dateObject.getMonth() + 1) + '-' + dateObject.getDate()
     const time = hour + ':' + min + ':' + sec
     if (type === 'date') {
         return date
